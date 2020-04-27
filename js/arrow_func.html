@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Arrow Function</h2>
+    <button>Click Me</button>
+    <script>
+        let a = function(){
+            return "Arrow func"
+        }
+        let arrow = () => {
+            return "Arrow func"
+        }
+        // nếu hàm chỉ có 1 lệnh return, có thể xóa {} và return
+        let arrow_1 = () => "Arrow func";
+
+        //nếu chỉ có 1 tham số, có thể  bỏ dấu ()
+        let arrow_2 = val => "Hellow " + val;
+        console.log(arrow_2('Arrowdsa'));
+
+        /*
+            this : trong arrow func, từ khóa this đại diện cho object dèfined the arrow func
+        */
+        
+        //Example: 
+        let button = document.querySelector('button');
+        function hello(e) {
+            console.log('Not arrow', this)
+        }
+        window.addEventListener('load', hello);
+        button.addEventListener('click', hello);
+
+        let arrow_hello = (e) => {
+            console.log('arrow', this)
+        }
+        window.addEventListener('load', arrow_hello);
+        button.addEventListener('click', arrow_hello);
+
+        
+    </script>
+</body>
+</html>

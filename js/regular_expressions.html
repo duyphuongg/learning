@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Regular Expressions</h2>
+    <script>
+        /*
+        /pattern/modifiers; 
+        modifiers : 
+            i : không phân biệt hoa thường
+            g : tìm toàn chuỗi, k dừng lại ở phần tử đầu tiên
+            m: tìm trên nhiều dòng
+
+        pattern: 
+            [abc] : tìm tất cả kí tự giữa dấu ngoặc
+            [0-9] : tìm tất cả số giữa ngoặc
+            (x|y) : tìm các từ đc phân cách |
+            \d : tìm 1 chữ số
+            \s : tìm 1 khoảng trắng
+            \b : tìm kết quả khớp \bKEYWORD hoặc KEYWORD\b
+            \uxxxx : Find the Unicode character specified by the hexadecimal number xxxx
+            n+ : khớp với bất kì chuổi nào chứa ít nhất 1 n
+            n* : 
+        */
+        var str = "Use a Microsoft case \n insensitive regular expression to replace Microsoft with W3Schools in a 1 2 5string";
+        let ex_replace = str.replace(/microsoft/ig, 'Phuong')
+        console.log("ex_replace", ex_replace)
+        let ex_search = str.search(/microsoft/ig)
+        console.log("ex_search", ex_search)
+
+        let ex_math = str.match(/[3]/igm)
+        console.log("ex_math", ex_math)
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Loop</h1>
+    <script>
+        let arr = ['BMW', 'Volvo', 'Mini'];
+        let obj = {fname:"John", lname:"Doe", age:25};
+        /* for/in : i is index
+        */
+        for(let i in arr){
+            console.log('for/in', i)
+        }
+
+        for(let i in obj){
+            console.log('for/in', i);
+        }
+
+        /*
+        for/of : i is value
+        */
+        for(let i of arr){
+            console.log('for/of',i);
+        }
+        // for(let i of obj){
+        //     console.log('for/of',i);
+        // }
+
+        let foreach =  arr.forEach((element, index) => {
+            console.log('forEach', element, index);
+        });
+
+        //break/continue : break : dừng vòng lặp nếu thỏa điều kiện, continue: bỏ qua giá trị thỏa điều kiện và tiếp tục loop
+        // for(let i = 0; i<10; i++){
+        //     if(i == 5) break;
+        //     document.write(i+'<br>');
+        // }
+
+        for(let i = 0; i<10; i++){
+            if(i == 5) continue;
+            document.write(i+'<br>');
+        }
+
+    </script>
+</body>
+</html>

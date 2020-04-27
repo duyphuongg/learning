@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>String method</h2>
+    <p>String Methods and Properties 'and' and Properties</p>
+    <script>
+        let text = document.getElementsByTagName('p')[0].innerText;
+        console.log("text", text)
+
+        // .length : độ dài của chuổi
+        let lenght = text.length;
+        console.log("lenght", lenght)
+
+        // .indexOf : kiểm tra 1 chuổi ở trong 1 chuổi, trả về vị trí xuất hiện đầu tiên. k tồn tại trả về -1
+        let check = text.indexOf('and');
+        console.log("check", check)
+
+        //lastIndexOf : giống hàm indexOf nhưng trả về vị trí xuất hiện cuối
+        let check_last = text.lastIndexOf('and');
+        console.log("check_last", check_last)
+
+        //search() : giống hàm indexOf()
+        let check_search = text.search('and');
+        console.log("check_search", check_search)
+
+        //slice(start, end): cắt chuỗi từ vị trí start đến vij trí end, nếu k nhập end cắt đến hết chuỗi
+        let string_slice = text.slice(15,19)
+        console.log("string_slice", string_slice)
+        let string_slice_2 = text.slice(15)
+        console.log("string_slice_2", string_slice_2)
+
+        //substring(start, end) : tương tự slice()
+        let substring = text.substring(15, 19)
+        console.log("substring", substring)
+        let substring_2 = text.substring(15)
+        console.log("substring_2", substring_2)
+
+        //substr(start, number) : cắt chuỗi từ vị trí start, cắt number kí tự
+        let substr = text.substr(15,3)
+        console.log("substr", substr)
+        let substr_2 = text.substr(15)
+        console.log("substr_2", substr_2)
+
+        //replace() : thay thế 1 chuổi bằng chuổi mới, defualt chỉ thay thể chuổi đầu tiên tìm đc
+        let replace = text.replace('and', 'note');
+        console.log("replace", replace)
+
+        //toUpperCase(): in hoa chuổi
+        let uppercase = text.toUpperCase();
+        console.log("uppercase", uppercase)
+
+        //toLowerCase() : in thường chuổi
+        let lowercase  =text.toLowerCase();
+        console.log("lowercase", lowercase)
+
+        //concat() : nối chuổi
+        let text1 = ' hello';
+        let text2 = 'world'
+        let concat = text1.concat(' ', text2, ' Phuong ')
+        console.log("concat", concat)
+
+        //trim(): trim space đầu cuối
+        let trim = concat.trim()
+        console.log("trim", trim)
+
+        //convert string to array : split()
+        let split = text.split(" ")
+        console.log("split", split)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>JavaScript Array Methods</h2>
+    <script>
+        let arr = ['car', 'bus', 'motor']
+        console.log("arr", arr)
+        console.log(typeof arr); //trả về object
+
+        Array.isArray(arr);
+        console.log("Array.isArray(arr)", Array.isArray(arr)) //trả về true
+
+        //Converting Arrays to Strings
+        // toString()
+        let to_string = arr.toString();
+        console.log("to_string", to_string)
+
+        //join(): tương tự toString, nhưng đc chọn kí tự giữa các phần tử
+        let join = arr.join('*')
+        console.log("join", join)
+
+        //pop() : xóa phần tử cuối cùng của 1 mảng
+        let pop = arr.pop();
+        console.log("arr", arr)
+        console.log("pop", pop)
+
+        //push
+        let push = arr.push('oto')
+        console.log("arr", arr) // trả về arr đc thêm phần tử ở cuối
+        console.log("push", push) // trả về length
+
+        // shift() : xóa phần tử đầu mảng
+        let shift = arr.shift();
+        console.log("arr", arr)
+        console.log("shift", shift)
+
+        //unshift() : them 1 phan tu vao dau mang
+        let unshift = arr.unshift('new car')
+        console.log("unshift", unshift)
+        console.log("arr", arr)
+
+        //length
+        let length = arr.length;
+        console.log("length", length)
+
+        //nối mảng
+        // splice()
+
+        // concat();
+        let arr1= [1,2];
+        let arr2 = [3,4];
+        let string1 = 'this is string'
+        let string2 = 'test concat'
+        let string_concat = string1.concat(string2, 'test')
+        console.log("string_concat", string_concat)
+        let concat = arr1.concat(arr2)
+        console.log("concat", concat)
+        
+        //slice(num) : cắt 1 phần của 1 mảng thành 1 mảng mới bắt đầu từ vị trí num
+        var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        var citrus = fruits.slice(2);
+        console.log("citrus", citrus)
+        //slice(num1, num2): bắt đầu từ num1, lấy num2 phần tử
+        let slice = fruits.slice(1, 3)
+        console.log("slice", slice)
+
+        //Sorting array
+        // sort() : abc
+        let sort = fruits.sort()
+        console.log("sort", sort)
+        //reverse() : đảo ngược chuổi
+        let reverse = sort.reverse()
+        console.log("reverse", reverse)
+
+        /*Numberic sort : hàm sort default sẽ sort theo abc, nên để sort number cần thêm 1 hàm so sánh: 
+        function(a, b){return a - b} : hàm sort sẽ so ánh 2 số  và sắp xếp theo giá trị trả về  : số âm, 0 , dương      
+        */
+        var points = [40, 100, 1, 5, 25, 10];
+        points.sort(function(a, b){return a - b});
+        console.log("points", points)
+
+        // Array.forEach() : callback func(value, index, array) : 
+        points.forEach(function(value, index, array) {
+        });
+
+        // Array.map() : tạo 1 mảng mới bằng cách thực hiện 1 hàm trên mỗi phần tử của mảng, callback func(value, index, array)
+        let map = points.map(function(val, index, arr){
+            return val*2;
+        })
+        console.log("map", map)
+
+        // Array.filter() : tạo ra 1 mảng mới, với các phần tử thỏa điều kiên
+        let filter = points.filter((val)=>{
+            return (val%2 == 0)
+        })
+        console.log("filter", filter)
+        
+        /*Array.reduce(): chạy 1 hàm trên mỗi phần tử của mảng để  tạo ra 1 giá trị duy nhất : 
+        callback(result, val, index, arr), giá trị ban đầu của result
+        */
+        let reduce = points.reduce(function(result, val, index, arr){
+            return result + val;
+        })
+        console.log("reduce", reduce)
+
+        let reduce2 = points.reduce(function(result, val, index, arr){
+            return result + val;
+        }, 100)
+        console.log("reduce2", reduce2)
+
+        // Array.every() : kiểm tra tất cả giá trị của mảng có vượt qua điều kiện ko : callback(val, index, arr) : output : true/false
+        console.log("points", points)
+        let every = points.every(function(val, index, arr){
+            return val > 1;
+        })
+        console.log("every", every)
+
+        // Array.some() :  kiểm tra một số giá trị của mảng có vượt qua điều kiện ko : callback(val, index, arr) : output : true/false
+        let some = points.some(function(val, index, arr){
+            return val > 1;
+        })
+        console.log("some", some)
+
+        // Array.indexOf(item,start) : tìm kiếm 1 item trong mảng, k có trả về -1, bắt đầu từ start
+        let indexOf = points.indexOf(25)
+        console.log("indexOf", indexOf)
+
+        // Array.find() : trả về gía trị đầu tiên thỏa điều kiện, callback(val, index, arr)
+        let find = points.find((val) => {
+            return val > 25;
+        })
+        console.log("find", find)
+        
+        let new_arr = [['a1', 'a2'], ['b1', 'b2'], ['c1', 'c2']];
+        let fore = new_arr.forEach(function(value, index, array) {
+            value.reduce( (rel, val) => {
+                rel.push
+            })
+        });
+
+        // Given an array of arrays, flatten them into a single array
+
+        /**
+        * Example: 
+        * var arrays = [
+        *    ["1", "2", "3"],
+        *    [true],
+        *    [4, 5, 6]
+        *  ];
+        * 
+        * flatten(arrays) // ["1", "2", "3", true, 4, 5, 6];
+        */
+
+        function flatten(arr) {
+        // viết code ở đây.
+        let reduce = arr.reduce((res, val) => {
+            if(typeof val !== 'object'){
+                res.push(val)
+            }else{
+                val.forEach( v => res.push(v))
+            }
+            return res
+        }, [])
+        console.log("flatten -> reduce", reduce)
+        return reduce;
+        }
+        var arrays = [
+           ["1", "2", "3"],
+           [true],
+           [4, 5, 6]
+         ];
+         flatten(arrays)
+    </script>
+</body>
+</html>

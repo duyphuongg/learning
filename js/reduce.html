@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Reduce Example</h4>
+<script>
+    
+    var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+    /*OUTPUT: { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }*/
+    const countDup = () => names.reduce((acc, curr) => {
+        if(acc[curr]){
+            acc[curr] +=1;
+        }else{
+            acc[curr] =1;
+        }
+        return acc;
+    }, {} );
+    console.log('countDup', countDup());
+
+    // viết gọn theo toán tử logic
+    const countDup2 = () => names.reduce( (acc, curr) => {
+        acc[curr] = acc[curr] + 1 || 1
+        return acc;
+    }, {})
+    console.log('countDup2', countDup2());
+
+    var people = [
+        { name: 'Alice', age: 21 },
+        { name: 'Max', age: 20 },
+        { name: 'Jane', age: 20 }
+    ];
+    /* 
+    groupedPeople is:
+    { 
+        20: [
+            { name: 'Max', age: 20 }, 
+            { name: 'Jane', age: 20 }
+        ], 
+        21: [{ name: 'Alice', age: 21 }] 
+    }
+    */
+
+    const group = (arr, propety) => arr.reduce((acc, curr) => {
+        let key = curr[propety]
+        if(!acc[key]){
+            acc[key] = []
+        }
+        acc[key].push(curr)
+        return acc
+    }, {})
+    console.log("group -> group", group(people, 'age'))
+
+    // friends - an array of objects 
+    // where object field "books" - list of favorite books 
+    var friends = [{
+    name: 'Anna',
+    books: ['Bible', 'Harry Potter'],
+    age: 21
+    }, {
+    name: 'Bob',
+    books: ['War and peace', 'Romeo and Juliet'],
+    age: 26
+    }, {
+    name: 'Alice',
+    books: ['The Lord of the Rings', 'The Shining'],
+    age: 18
+    }];
+
+    // allbooks - list which will contain all friends' books +  
+    // additional list contained in initialValue
+    var allbooks = friends.reduce(function(accumulator, currentValue) {
+    return [...accumulator, ...currentValue.books];
+    }, ['Alphabet']);
+    console.log("group -> allbooks", allbooks)
+
+
+    // allbooks = [
+    //   'Alphabet', 'Bible', 'Harry Potter', 'War and peace', 
+    //   'Romeo and Juliet', 'The Lord of the Rings',
+    //   'The Shining'
+    // ]
+
+
+    let arr = [1, 2, 1, 2, 3, 5, 4, 5, 3, 4, 4, 4, 4];
+    let result = () => arr.reduce((acc, curr, index, arr) => {
+        if(arr.indexOf(curr) == index){
+            acc.push(curr)
+        } 
+        return acc;
+    },[])
+    console.log(result()); //[1,2,3,4,5]
+
+    /* output: [0, 1, 2, 3, 4, 5]*/
+    let input = [[0, 1], [2, 3], [4, 5]];
+    let output = input.reduce((acc, curr) => {
+        return acc.concat(curr)
+    }, [])
+    let output2 = input.reduce( (acc, curr) => {
+        return [...acc, ...curr]
+    }, [])
+    console.log('output', output);
+    console.log('output2', output2);
+
+    /*INPUT*/
+    const topics = [
+    {
+        topic: "ReactJS",
+        posts: [{ postID: "id1", title: "title1" }, { postID: "id2", title: "title2" }]
+    },
+    {
+        topic: "Vue.js",
+        posts: [{ postID: "id3", title: "title3" }, { postID: "id4", title: "title4" }]
+    }
+    ];
+    /*OUTPUT*/
+    let listPost = topics.reduce( (acc, curr) => {
+        return [...acc, ...curr.posts]
+    }, [])
+    console.log('listPost', listPost);
+
+    //Lấy ra title của id ngẫu nhiên từ listPost
+   
+    console.log('title', group(listPost, 'postID'));
+    
+</script>
+</body>
+</html>

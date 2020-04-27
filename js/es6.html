@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H1>ES6</H1>
+    <script>
+        // Destructuring Assignment 
+        let ob = {
+            name: "phuong",
+            age: 25,
+            gender: 'male'
+        }
+        const {name, age , gender} = ob;
+        console.log("gender", gender)
+        console.log("name", ob['name'])
+
+        function countOccurrences(arr) {
+
+            return arr.reduce(function(acc, curr) {
+                if (acc[curr]) {
+                    acc[curr] += 1;
+                } else {
+                    acc[curr] = 1
+                }
+                return acc;
+
+            }, {})
+
+        }
+
+        console.log('countOccurrences',countOccurrences(['a', 'b', 'c', 'b', 'a']));
+
+        var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
+
+        var countedNames = names.reduce(function (allNames, name) { 
+        console.log("countOccurrences -> name", name)
+        console.log("countOccurrences -> allNames", allNames)
+            if (name in allNames) {
+                allNames[name]++;
+            }
+            else {
+                allNames[name] = 1;
+            }
+            return allNames;
+        }, {});
+        console.log("countOccurrences -> countedNames", countedNames)
+
+
+
+        //Arow func
+        let ids = ['5632953c4e345e145fdf2df8', '563295464e345e145fdf2df9'];
+        let arow = ids.map(id => `ID is ${id}`)
+        console.log("arow", arow)
+
+        let arow_param = ids.map((val, index, arr) => `Index ${index} : id is ${val}`)
+        console.log("arow_param", arow_param)
+
+        //Promises : new Promise(function(resolve, reject))
+        setTimeout(function(){
+            console.log('settimeout');
+        }, 1000)
+
+        // es6
+        let wait1000 = new Promise(function(resolve, reject){
+            setTimeout(resolve, 1000)
+        }).then(function(){
+            console.log('Yay!!')
+        })
+
+        let wait1000_arow = new Promise((resolve, reject) => {
+            setTimeout(resolve, 1000)
+        }).then(() => console.log('Yaaa arow'))
+
+        //xử lý nhiều lệnh setTimeOut lồng nhau
+        let manyWait1000 = () => new Promise((resolve, reject) => {
+            setTimeout(resolve, 1000)
+        })
+
+        manyWait1000()
+            .then(() => {
+                console.log('Console 1');
+                return manyWait1000();
+            })
+            .then(()=>{
+                console.log('Console 2')
+                return manyWait1000();
+            })
+            .then(()=> {
+                console.log('Console3')
+            })
+
+        //Xử lý nhiều lệnh setTimeout với các thời gian khác nhau
+        let waitTime = time => new Promise((resolve, reject)=> {
+            setTimeout(resolve, time)
+        })
+        waitTime(1000)
+        .then(()=> {
+            console.log('Waiting 1000');
+            return waitTime(2000)
+        })
+        .then(()=>{
+            console.log('Wating 2000');
+        })
+
+        //use reject
+        let isAnimationSupported = step => (step == 1) ? true : false;
+        function animationTimeout(step, interval) {
+            new Promise(function(resolve, reject) {
+                if (isAnimationSupported(step)) {
+                    setTimeout(resolve, interval);
+                } else {
+                    reject('animation not supported');
+                }
+            });
+        }
+
+        var firstKeyframe = animationTimeout(1, 1000);
+
+        const url='https://jsonplaceholder.typicode.com/posts';
+        let getData = url => fetch(url);
+        getData(url).then( data => data.json())
+                    .then( result=>console.log('getData', result.pop()))
+
+        let printString = string => new Promise((relsove, reject) => setTimeout( () => {
+            console.log('String is: ', string);
+            relsove();
+        }, 1000))
+
+        function sprintAll(){
+            printString('A')
+            .then(() => printString('B'))
+            .then(() => printString('C'))
+        }
+
+        async function asyncSprintAll(){
+            await printString('A');
+            await printString('B');
+            await printString('C');
+        }
+
+        async function asyncGetData(){
+            let data = await getData(url);
+            data = await data.json();
+            data = await data.pop();
+            console.log("asyncGetData", data)
+            return await data;
+        }
+        asyncGetData()
+
+        // sprintAll()
+        asyncSprintAll()
+
+        //async/await
+        
+        //Modules in ES6
+
+        // Rest parameter and Spread operator
+        const arr = ['said', 20, 'javascript', 'hi', 'said', 'how are you']
+        console.log("arr", arr)
+        const [val1, va2, ...rest] = arr;
+        console.log("rest", rest)
+        console.log("...rest", ...rest)
+        console.log("va2", va2)
+        console.log("val1", val1)
+        
+    </script>
+</body>
+</html>

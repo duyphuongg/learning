@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.green-bg{
+			background-color: green;
+		}
+		.border-blue{
+			border: blue;
+		}
+		.color-orange{
+			color: orange;
+		}
+	</style>
+</head>
+<body>
+	<h1>Extension JS snipper</h1>
+	<div id="selectId">Select ID</div>
+	<div class="selectClass no-border">selectClass</div>
+	<p class="color-blue">Select tagName</p>
+	<div class="query-selector">query-selector</div>
+	<div class="query-select-all">query-select-all</div>
+	
+	<script>
+		//select dom
+		let selectId = document.getElementById('selectId');
+		let selectTagName = document.getElementsByTagName('p')[0];
+		let selectClass = document.getElementsByClassName('selectClass')[0];
+		let querySelector = document.querySelector('.selectClass, #selectId, .query-selector');
+		let querySelectorAll = document.querySelectorAll('.query-select-all')[0];
+
+		// Class 
+		selectId.classList.add('border-blue');
+		querySelector.classList.add('green-bg');
+		selectClass.classList.remove('no-border');
+		selectTagName.classList.toggle('color-orange')
+
+		//Style
+		selectClass.style.color = 'red';
+		querySelectorAll.style.backgroundColor = 'blue'
+
+		//Attr
+		let getAttr = selectId.getAttribute('id');
+		console.log('getAttr', getAttr);
+		querySelectorAll.setAttribute('data-id', 1);
+		querySelectorAll.setAttribute('data-target', 2);
+		querySelectorAll.removeAttribute('data-id');
+		
+	</script>
+</body>
+</html>

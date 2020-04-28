@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <!-- <Form/>
+    <Display/>
+    <Edit/> -->
+    <ListUser/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import Form from './components/Form'
+import Display from './components/Display'
+import Edit from './components/Edit'
+import ListUser from './components/UserDisplay'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Form,
+    Display,
+    Edit,
+    ListUser
   }
 }
 </script>

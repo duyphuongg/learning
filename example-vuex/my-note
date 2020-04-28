@@ -3,3 +3,7 @@
 - Getters : khi muốn tính toán các biêns trong state dùng ở nhiều component khác nhau
 - Mutations : thay đổi thực sự state trong store, chạy đồng bộ
 - Actions : tương tự Mutations, nhưng không trực tiếp thay đổi state trong store mà nó sẽ thông qua mutations để thay đổi, có thể chứa các hàm bất đồng bộ
+
+có các func đi kèm : 
+- mapState, mapGetter nằm ở trong computed
+- mapMutations, mapActions nằm ở method

@@ -11,8 +11,8 @@ export const store = new Vuex.Store({
     change (state, flavor) {
       state.flavor = flavor
     }
-  },
-  getters: {
-    flavor: state => state.flavor
   }
+  // getters: {
+  //   flavor: state => state.flavor
+  // }
 })

@@ -1,6 +1,6 @@
 <template>
   <div v-on:click="handleCount">
-    View click count : {{$store.getters.count}}
+    View click count : {{count}}
   </div>
 </template>
 

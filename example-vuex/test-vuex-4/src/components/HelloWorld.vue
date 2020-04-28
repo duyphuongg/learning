@@ -5,7 +5,7 @@
       <label for="search_input">Search</label>
       <input type="text" v-model="input_search" @blur="getKeyWord">
       <ul>
-        <li v-for="(user, index) in searchKeyWord" :key="index">
+        <li v-for="(user, index) in users" :key="index">
           <div class="user">
             <p>Name : {{user.name}}</p>
             <p>Email : {{user.email}}</p>

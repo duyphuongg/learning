@@ -1,6 +1,6 @@
 <template>
   <div>
-    <label for="flavor">Favorite ice cream flavor?</label>
+    <label for="flavor">Edit ice cream flavor?</label>
     <input name="flavor" v-on:input="changed" :value="flavor">
   </div>
 </template>

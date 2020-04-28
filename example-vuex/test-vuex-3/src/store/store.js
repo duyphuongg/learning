@@ -22,8 +22,11 @@ export const store = new Vuex.Store({
       state.history.push(link)
     },
     REMOVE_LINK: function (state, link) {
+      console.log('REMOVE_LINK', link)
+      console.log('REMOVE_LINK before', state.links)
       state.links.splice(link, 1)
       state.history.push(state.links.splice(link, 1))
+      console.log('REMOVE_LINK after', state.links)
     },
     REMOVE_ALL: function (state) {
       state.links = []

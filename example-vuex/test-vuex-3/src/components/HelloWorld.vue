@@ -5,10 +5,10 @@
       {{title}}
       <div class="links">
         <label for="add_link">Add link</label>
-        <input type="text" id="add_link" v-model="newlink" @keyup.space="addLinkFunc">
+        <input type="text" id="add_link" v-model="newlink" @keyup.enter="addLinkFunc">
         <ul>
           <li v-for="(link, key) in links" v-bind:key="key">
-            <a :href="link">{{link}}</a>
+            <a :href="key">{{link}}</a>
             <button @click="removeLinkFunc(key)">Remove</button>
           </li>
         </ul>
@@ -54,7 +54,8 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'ADD_LINK'
+      'ADD_LINK',
+      'REMOVE_LINK'
     ]),
     ...mapActions([
       'removeLink',
@@ -69,7 +70,8 @@ export default {
       this.newlink = ''
     },
     removeLinkFunc: function (link) {
-      this.removeLink(link)
+      console.log('link', link)
+      this.REMOVE_LINK(link)
     },
     removeAllFunc: function () {
       this.removeAll()

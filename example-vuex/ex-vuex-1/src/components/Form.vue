@@ -10,13 +10,13 @@ import {mapState} from 'vuex'
 
 export default {
   computed: {
-    ...mapState([
+    ...mapState('a', [
       'flavor'
     ])
   },
   methods: {
     changed: function (event) {
-      this.$store.commit('change', event.target.value)
+      this.$store.a.commit('change', event.target.value)
     }
   }
 }

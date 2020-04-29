@@ -4,6 +4,7 @@
     <Display/>
     <Edit/>
     <ListUser/>
+    <ListLink/>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Form from './components/Form'
 import Display from './components/Display'
 import Edit from './components/Edit'
 import ListUser from './components/UserDisplay'
+import ListLink from './components/LinkDisplay'
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     Form,
     Display,
     Edit,
-    ListUser
+    ListUser,
+    ListLink
   }
 }
 </script>

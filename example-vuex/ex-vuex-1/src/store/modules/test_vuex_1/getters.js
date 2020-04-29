@@ -1,3 +1,3 @@
 export default {
-  // flavor: state => state.flavor
+  flavor: state => state.flavor
 }

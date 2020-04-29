@@ -6,17 +6,20 @@
 </template>
 
 <script>
-import {mapState} from 'vuex'
+import {mapGetters, mapMutations} from 'vuex'
 
 export default {
   computed: {
-    ...mapState([
+    ...mapGetters('a', [
       'flavor'
     ])
   },
   methods: {
-    changed: function (event) {
-      this.$store.commit('change', event.target.value)
+    ...mapMutations('a', [
+      'change'
+    ]),
+    changed (event) {
+      this.change(event.target.value)
     }
   }
 }

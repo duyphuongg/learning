@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <Form/>
+    <Form/>
     <Display/>
-    <Edit/> -->
+    <Edit/>
     <ListUser/>
   </div>
 </template>

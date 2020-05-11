@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <Form/>
+    <!-- <Form/>
     <Display/>
     <Edit/>
     <ListUser/>
+    <ListLink/> -->
+    <PostDisplay/>
   </div>
 </template>
 
@@ -12,6 +14,8 @@ import Form from './components/Form'
 import Display from './components/Display'
 import Edit from './components/Edit'
 import ListUser from './components/UserDisplay'
+import ListLink from './components/LinkDisplay'
+import PostDisplay from './components/PostDisplay'
 
 export default {
   name: 'App',
@@ -19,7 +23,9 @@ export default {
     Form,
     Display,
     Edit,
-    ListUser
+    ListUser,
+    ListLink,
+    PostDisplay
   }
 }
 </script>

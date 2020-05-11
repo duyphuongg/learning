@@ -1,3 +1,3 @@
 export default {
-  flavor: ''
+  flavor: 'a flavor'
 }

@@ -5,6 +5,7 @@ import createLogger from 'vuex/dist/logger'
 // Modules
 import testOne from './modules/test_vuex_1'
 import testFour from './modules/test_vuex_4'
+import link from './modules/link'
 
 const debug = process.env.NODE_ENV !== 'production'
 
@@ -16,7 +17,8 @@ export default new Vuex.Store({
    */
   modules: {
     a: testOne,
-    b: testFour
+    b: testFour,
+    link
   },
 
   /**

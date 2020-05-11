@@ -4,5 +4,8 @@ export default{
   },
   GET_SEARCH: function (state, key) {
     state.key_word = key
+  },
+  GET_POSTS: function (state, posts) {
+    state.posts = posts
   }
 }

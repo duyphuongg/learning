@@ -1,4 +1,6 @@
 export default {
   users: [],
-  key_word: ''
+  key_word: '',
+  flavor: 'b flavor',
+  posts: []
 }

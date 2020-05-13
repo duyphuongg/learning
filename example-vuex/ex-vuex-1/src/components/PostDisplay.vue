@@ -24,11 +24,11 @@
             </table>
             <div class="page-pagination" v-if="postPagination.totalPages > 1">
               <ul >
-                <li v-for="(page, index) in postPagination.totalPages"
+                <li v-for="(page, index) in paginationListPage"
                   :key="index"
                   :id="page"
                   @click="currPage = page"
-                  :class="{'active' : currPage == page}">
+                  :class="{'active' : currPage == page, 'disable' : typeof page !== 'number'}">
                     {{page}}
                 </li>
               </ul>
@@ -76,7 +76,10 @@ export default {
       return this.posts
     },
     postPagination: function () {
-      return this.paginator(this.searchPost, this.currPage)
+      return this.paginator(this.searchPost, this.currPage, 10)
+    },
+    paginationListPage: function () {
+      return this.pagination(this.currPage, this.postPagination.totalPages)
     }
   },
   watch: {
@@ -104,7 +107,51 @@ export default {
         totalPages: totalPages,
         data: paginatedItems
       }
+    },
+    getRange (start, end) {
+      return Array(end - start + 1)
+        .fill()
+        .map((v, i) => i + start)
+    },
+    pagination (currentPage, pageCount) {
+      let delta
+      if (pageCount <= 10) {
+        // delta === 10: [1 2 3 4 5 6 7 8 9 10]
+        delta = 10
+      } else {
+        // delta === 2: [1 ... 4 5 6 ... 10]
+        // delta === 4: [1 2 3 4 5 ... 10]
+        delta = currentPage > 6 && currentPage < pageCount - 5 ? 4 : 6
+      }
+
+      const range = {
+        start: Math.round(currentPage - delta / 2),
+        end: Math.round(currentPage + delta / 2)
+      }
+
+      if (range.start - 1 === 1 || range.end + 1 === pageCount) {
+        range.start += 1
+        range.end += 1
+      }
+
+      let pages =
+        currentPage > delta
+          ? this.getRange(Math.min(range.start, pageCount - delta), Math.min(range.end, pageCount))
+          : this.getRange(1, Math.min(pageCount, delta + 1))
+
+      const withDots = (value, pair) => (pages.length + 1 !== pageCount ? pair : [value])
+
+      if (pages[0] !== 1) {
+        pages = withDots(1, [1, '...']).concat(pages)
+      }
+
+      if (pages[pages.length - 1] < pageCount) {
+        pages = pages.concat(withDots(pageCount, ['...', pageCount]))
+      }
+
+      return pages
     }
+
   }
 }
 </script>
@@ -125,5 +172,8 @@ export default {
 }
 .page-pagination ul li.active{
   background: crimson;
+}
+.page-pagination ul li.disable{
+  pointer-events: none;
 }
 </style>

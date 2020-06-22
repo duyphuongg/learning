@@ -175,6 +175,26 @@
            [4, 5, 6]
          ];
          flatten(arrays)
+
+         let reviews = [
+            {user_country: "MD", review_content: "товар не доставлен", review_star: 1, review_date: "26 May 2020 05:04"},
+            {user_country: "MD", review_content: "товар не доставлен", review_star: 1, review_date: "26 May 2020 05:04"},
+            {user_country: "RU", review_content: "товар не доставлен", review_star: 2, review_date: "23 May 2020 04:09"},
+            {user_country: "NZ", review_content: "The item never arrived, still waiting for answers from AliExpress ", review_star: 1, review_date: "17 May 2020 12:59"},
+            {user_country: "PT", review_content: "The item never arrived, still waiting for answers from AliExpress ", review_star: 1, review_date: "12 May 2020 04:14"},
+            {user_country: "RU", review_content: "The item never arrived, still waiting for answers from AliExpress ", review_star: 1, review_date: "11 May 2020 10:28"},
+            {user_country: "PT", review_content: "Não recebi encomenda", review_star: 1, review_date: "24 Apr 2020 15:32"},
+            {user_country: "PT", review_content: "", review_star: 1, review_date: "24 Apr 2020 15:32"}
+        ]
+        console.log("group -> reviews 1111", reviews)
+        reviews = reviews.filter((thing, index, self) =>
+            index === self.findIndex((t) => (
+                t.review_content === thing.review_content
+            ))
+        )
+        console.log("group -> reviews 222", reviews)
+
+
     </script>
 </body>
 </html>

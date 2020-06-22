@@ -13,11 +13,36 @@
 
         // Math.random()
         console.log("Math.random()", Math.random())
-        window.addEventListener('beforeunload', function (e) { 
-            e.preventDefault(); 
-            e.returnValue = ''; 
-            console.log('close tab')
-        }); 
+        function caserUpper(val) {
+            return new Promise((resolve, reject) => {
+                resolve(val.toUpperCase());
+            });
+        }
+
+        async function msg(x) {
+            try {
+                const msg = await caserUpper(x);
+                console.log(msg);
+            } catch(err) {
+                console.log('Ohh no:', err.message);
+            }
+        }
+        let a = {"en":"English","it":"Italian","fr":"French","de":"German","ru":"Russian","es":"Spanish","pt":"Portuguese","ja":"Japanese","ko":"Korean","nl":"Dutch","ar":"Arabic","tr":"Turkish","vi":"Vietnamese","he":"Hebrew","th":"Thai"};
+        // let b = a.map((val, index) => {
+        //     return {id: index, text: val}
+        // })
+        // console.log("a", Object.entries(a))
+        // console.log("b", b)
+        let format = []
+        for(var i in a){
+            let b = {id: i, text: a[i]}
+            format.push(b)
+        }
+        console.log(format);
+
+
+msg('Hello'); // HELLO
+msg(34); // Ohh no: val.toUpperCase is not a function
     </script>
 </body>
 </html>

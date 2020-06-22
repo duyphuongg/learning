@@ -1,6 +1,8 @@
 <template>
     <div class="list-post" v-if="posts != []">
         <h4>List title post</h4>
+        <fa-rating :glyph="thumbsUp"></fa-rating>
+        <fa-rating :glyph="thumbsUp" :read-only="true" :rating="4.3" :increment="0.01" inactive-color="#A4AFB7ed" active-color="#FFB303" :item-size="16" :spacing="4" border-color="none"></fa-rating>
         <div class="table-responsive-xxs">
             <div class="header">
               <input type="text" v-model="keyWord" placeholder="Search post title">
@@ -39,17 +41,24 @@
 
 <script>
 import {mapState, mapActions} from 'vuex'
+import {FaRating} from 'vue-rate-it'
+import ThumbsUp from 'vue-rate-it/glyphs/star'
 
 export default {
   data () {
     return {
       currPage: 1,
       keyWord: '',
-      keyFilter: ''
+      keyFilter: '',
+      thumbsUp: ''
     }
+  },
+  components: {
+    'fa-rating': FaRating
   },
   created () {
     this.getPosts()
+    this.thumbsUp = ThumbsUp
   },
   computed: {
     ...mapState('b', [

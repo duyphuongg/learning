@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        *Nullish coalescing Operator : null or undefined
+        */
+        let anonystick = {
+            profile: {
+                website: 'anonystick.com',
+                type: 'blog javascript',
+                age: 0,
+                release: '',
+                date: null
+            }
+        }
+
+        console.log(anonystick.profile.age || 18); //18
+        console.log(anonystick.profile.date ? '01/01/2020' : 17); //17
+
+        console.log(anonystick.profile.age ?? 18) // 0
+        console.log(anonystick.profile.release ?? 18) // ''
+
+        /*
+        * Optional Chaining : nếu ko thỏa mãn return về undefined
+        */
+        let op_chaining = anonystick?.profile?.website ?? 'phuong'
+        console.log("op_chaining", op_chaining) //anonystick.com
+
+
+
+    </script>
+</body>
+</html>

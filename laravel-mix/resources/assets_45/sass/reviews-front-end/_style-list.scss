@@ -1,0 +1,254 @@
+@import "reviews-front-end/style-core";
+
+.lightbox-thmb{
+    max-width: 100%;
+    opacity: 1 !important;
+}
+
+#shopify-ali-review{
+
+    .alireview-layout-list{
+        display: flex;
+
+        .alireview-layout-list__left{
+            width: 383px;
+            //rating list
+
+            .alireview-header-summary {
+                position: relative;
+                padding: 5px 0;
+                display: block;
+                @media (min-width : 992px){
+                    margin: 0;
+                    .alireview-summary{
+                        flex-direction: row;
+                        .alireview-number-total-review{
+                            margin-bottom: 0;
+                            margin-right: 16px;
+                        }
+                    }
+                }
+                @media (max-width : 992px) and (min-width : 768px) {
+                    display: flex;
+                    align-items: center;
+                    .alr-summary {
+                        margin-left: 50px;
+                        margin-top: 0;
+                    }
+                }
+            }
+            .alr-summary {
+                float: left;
+                margin-left: 0;
+                margin-top: 20px;
+                .alr-progress-bar{
+                    width: 200px;
+                }
+            }
+            @media (min-width : 992px){
+                .alireview-btn-add-review {
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                    transform: unset;
+                    margin-top: 50px;
+                    &:before{
+                        content: ' ';
+                        position: absolute;
+                        width: 100%;
+                        height: 1px;
+                        top: -25px;
+                        background: #E6E6E6;
+                    }
+                }
+            }
+            //end rating list
+        }
+
+        .alireview-layout-list__right{
+            flex : 1;
+
+            .alireview-sort{
+                padding : 0;
+            }
+
+            .alireview-row{
+                padding: 29px 0 0 16px;
+
+                .alireview-desc-content{
+                    padding: 0 25px 10px 25px;
+                    background: #FFFFFF;
+                    border-radius: 4px;
+                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+
+                    &:before,
+                    &:after {
+                        content: none !important;
+                    }
+
+                    .alireview-status {
+                        height: 26px;
+                        display: inline-block;
+                        background: #FFFFFF;
+                        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+                        border-radius: 40px;
+                        padding: 1px 12px;
+                        position: relative;
+                        top: -13px;
+                    }
+
+                    .alireview-product-img{
+                        img{
+                            width: 55px;
+                            height: 55px;
+                            margin-right: 7px;
+                            border-radius: 4px;
+                        }
+                    }
+
+                    .alireview-post {
+                        margin-bottom: 15px;
+                    }
+
+                    .alireview-like-wrap{
+                        margin-top: 8px;
+                        .alireview-date {
+                            display: inline-block !important;
+                        }
+                    }
+                }
+            }
+            .list-review-pagination{
+                margin-top : 24px;
+            }
+
+            hr{
+                margin: 0 0 10px 16px;
+                &.mt-20{
+                    display: none;
+                }
+                @media (max-width : 991px){
+                    &.mt-20{
+                        display: block;
+                    }
+                }
+                @media (max-width : 991px){
+                    margin: 10px 0 10px;
+                    
+                }
+                
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    //Fixed left rating
+    .page-container {
+        transform: unset !important;
+        overflow: unset !important;
+    }
+    #shopify-ali-review{
+        .alireview-fixed-summary{
+            position: sticky;
+            top: 30px;
+        }
+        .alireview-layout-list.fixed_rating_review{
+            .alireview-layout-list__left{
+                position: fixed;
+                width: 383px;
+                top : 30px;
+                left: 60px;
+                z-index: 999;
+                background: #FFFFFF;
+            }
+
+            .alireview-layout-list__right{
+                margin-left: 383px;
+            }
+        }
+        .alireview-add-form {
+            padding: 0 0 20px 16px;
+        }
+    }
+}
+@media (min-width: 992px) and (max-width : 1199px) {
+    //Fixed left rating
+    .page-container {
+        transform: unset !important;
+        overflow: unset !important;
+    }
+    #shopify-ali-review{
+        .alireview-fixed-summary{
+            position: sticky;
+            top: 30px;
+        }
+        .alireview-layout-list.fixed_rating_review{
+            .alireview-layout-list__left{
+                position: fixed;
+                width: 299px;
+                top : 30px;
+                left: 32px;
+                z-index: 999;
+                background: #FFFFFF;
+            }
+            .alireview-layout-list__right{
+                margin-left: 299px;
+            }
+        }
+    }
+
+    #shopify-ali-review{
+        .alireview-layout-list{
+            .alireview-layout-list__left{
+                width: 299px;
+            }
+            .alireview-layout-list__right{
+                .alireview-row{
+                    padding: 29px 0 0 16px;
+                }
+                .alireview-add-form {
+                    padding: 0 0 20px 16px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width : 992px){
+    .alr-summary.alr-rating-icons{
+        margin-left: 0;
+        padding: 0;
+        border-left: none;
+        margin-bottom: 0;
+        .alr-wrap-count {
+            .alr-count-reviews{
+                display: block;
+                li{
+                    line-height: 28px;
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 991px){
+    #shopify-ali-review{
+        .alireview-layout-list{
+            display: block;
+            .alireview-layout-list__left{
+                width: 100%;
+            }
+            .alireview-layout-list__right{
+                .alireview-row{
+                    padding: 29px 0 0;
+                }
+                .alireview-add-form {
+                    padding: 10px 0 0px;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,203 @@
+.popup-detail-on-devices{
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: block;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: opacity .3s ease;
+    .popup-detail-on-devices-wrap{
+        display: block;
+        margin: 50px auto;
+    }
+
+    button{
+        cursor: auto;
+    }
+    .modal__container {
+        width: 90%;
+        max-width: 1360px;
+        margin: 0px auto;
+        background-color: #fff;
+        border-radius: 2px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+        transition: all .3s ease;
+        border: 16px solid #D4D4D4;
+        position: relative;
+
+        .modal__header .close{
+            color: #D0D0D0;
+            opacity: 1;
+        }
+        
+        .modal__header{
+            .close{
+                position: absolute;
+                right: 15px;
+                top: 10px;
+                z-index : 11;
+                padding: 0;
+                cursor: pointer;
+                background: transparent;
+                border: 0;
+                text-shadow: none;
+                -webkit-appearance: none;
+            }
+        }
+        .modal__title{
+            font-size: 20px;
+            margin-top: 45px;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        .modal__content{
+            overflow: auto;
+            overflow-x: hidden;
+            // max-height: 725px;
+            min-height: 650px;
+            padding: 0;
+            position: relative;
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #C4C4C4;
+                border-radius: 20px;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background: #C4C4C4;
+                border-radius: 20px;
+            }
+            &::-webkit-scrollbar-track {
+                margin-top: 40px;
+
+            } 
+            
+            .preview-template{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                padding: 4% 10%;
+                background: #808080;
+            }
+        }
+        .modal__footer{
+            padding: 20px;
+            border-top: 1px solid #E2E2E2;
+            position: relative;
+            z-index: 11;
+            background: white;
+            button{
+                background-color: transparent;
+                border: none;
+                color: #92929C;
+                font-size: 20px;
+                width: 72px;
+                padding: 7px;
+                cursor: pointer;
+                &.active, &:hover{
+                    color: #525252;
+                    background: #F5F5F5;
+                    border-radius: 7px;
+                }
+            }
+        }
+    }
+
+    .popup-review-detail{
+        // height: 100%;
+        .review__img img{
+            width: 90%;
+            height: 100%;
+        }
+        .review__btn{
+            margin-top: 20px;
+            button{
+                height: 40px;
+                font-size: 14px;
+                padding: 5px 40px;
+            }
+        }
+        .review__content{
+            padding: 50px 24px 10px;
+        }
+        .review__author{
+            margin-bottom: 25px;
+        }
+        .review__author{
+            margin-bottom: 15px;
+        }
+        .review__reaction-and-date{
+            margin-top: 5px;
+        }
+        .review__header{
+            button{
+                font-size: 24px;
+                color: #D0D0D0;
+                opacity: 1
+            }
+        }
+    }
+
+    &.on-desktop{
+        .popup-review-detail{
+            .review__thumb{
+                height: 120px;
+            }
+        }
+        .review__header{
+            right: 16px;
+            top: 10px;
+        }
+    }
+
+    &.on-mobile{
+
+        .modal__container .modal__content{
+            min-height: 650px;
+        }
+        .popup-review-detail{
+            flex-wrap: wrap;
+            .review__img, .review__content{
+                width: 100%;
+            }
+            .review__img{
+                border-right: 0;
+                border-bottom: 1px solid #E2E2E2;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .review__content{
+                padding: 24px 24px 20px;
+            }
+            .review__header{
+                color: #D0D0D0;
+                font-weight: 300;
+                opacity: 0.6;
+                border: 0;
+                outline: none;
+                background: none;
+            }
+            .review__header{
+                right: 16px;
+                top: 10px;
+            }
+        }
+        .modal__content {
+            .preview-template{
+                padding: 24px 16px;
+            }
+        }
+        .modal__container .modal__header .close{
+            right: 8px;
+            top: 3px;
+        }
+    }
+}

@@ -8,11 +8,32 @@
 <body>
     <h2>JavaScript Errors - Throw and Try to Catch</h2>
     <script>
-        try {
-            alertMess("Test") ;
-        } catch (error) {
-            console.log("error", error)
-        }
+        // const axios = require('axios')
+        // const cheerio = require('cheerio')
+        import axios from 'axios'
+        import cheerio from 'cheerio'
+        /**
+         * test crawl data
+         */
+        const getInfo = async () => {
+            try {
+                const { data } = await axios.get(
+                    'https://www.yellowpages.vnn.vn/cls/268180/may-dong-phuc.html'
+                );
+                const $ = cheerio.load(data);
+                const postTitles = [];
+
+                // postTitles = $('div > h2.company_name > a').text()
+
+                return $;
+            } catch (error) {
+                throw error;
+            }
+        };
+
+        getInfo().then((res) => {
+            console.log(res);
+        })
     </script>
 </body>
 </html>

@@ -1,0 +1,246 @@
+.table {
+    border-radius: $table-border-radius !important;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.wrapper-tbl-action {
+    padding-bottom: 25px;
+    min-height: 62px;
+
+    .action-group {
+        margin-left: 15px;
+
+        &--fz12 {
+            button,
+            a {
+                font-size: 12px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.table-ali-custom {
+    border: solid 1px #d7dae2;
+    background-color: #fff;
+
+    &.table-mid td {
+        vertical-align: middle;
+    }
+
+    thead > tr > th {
+        border: none;
+        padding: 8px !important;
+        font-weight: 600;
+        font-size: 13px;
+    }
+
+    &.table-head-light thead > tr > th {
+        font-weight: 500 !important;
+    }
+
+    thead > tr > th ,
+    tr td {
+        padding: 12px 8px !important;
+    }
+
+    tr {
+        border-top: solid 1px #d7dae2;
+        transition: $time-transition / 2;
+
+        td {
+            border-top: none !important;
+
+            button {
+                margin: 0;
+
+                &.approveReview{
+                    border: 1px solid #242539;
+                    border-radius: 4px 0 0 4px;
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: #fff;
+                    &:hover{
+                        border: 1px solid #FF881B;
+                    }
+                }
+
+                &.editReview{
+                    i{
+                        color: #242539;
+                    }
+                    border-radius: 0;
+                }
+
+                &.deleteReview{
+                    i{
+                        color: #242539;
+                    }
+                    border-left: none;
+                    &:hover{
+                        border-left: 1px solid #b3b3b3;
+                        border-color: #b3b3b3;
+                    }
+                    border-radius: 0 4px 4px 0;
+                }
+            }
+
+            .product-link {
+                font-size: 13px;
+                font-weight: 500;
+                color: #3b86ff;
+            }
+
+            .tooltip__black{
+                position: relative;
+                &.editReview{
+                    .tooltip__body{
+                        left: -30%;
+                    }
+                }
+                .tooltip__body{
+                    opacity: 0;
+                    position: absolute;
+                    z-index: -1;
+                    top: -46px;
+                    left: -52%;
+                    transition: .1s opacity;
+                    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.2);
+                    border-radius: 5px;
+                    &:after{
+                        content:"";
+                        position:absolute;
+                        left: 40%;
+                        bottom: -3px;
+                        background: #242539;
+                        height: 12px;
+                        width: 12px;
+                        transform: rotate(45deg);
+                        border-bottom:1px solid #242539;
+                        border-right:1px solid #242539;
+                        box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.15);
+                    }
+                    &:before{
+                        content: "";
+                        position: absolute;
+                        bottom: 0px;
+                        left: 15px;
+                        background: #242539;
+                        height: 10px;
+                        width: 20px;
+                        z-index: 1;
+                    }
+                    .tooltip__inner{
+                        background-color: #242539;
+                        padding: 10px 15px 10px 15px;
+                        border-radius: 5px;
+                        p{
+                            color: #fff;
+                            margin-bottom: 0;
+                            font-size: 11px;
+                            padding-right: 0;
+                            font-weight: normal;
+                            text-align: left;
+                            cursor: default;
+                            line-height: 17px;
+                            a{
+                                color: $orange_default;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                
+                &:hover{
+                    .tooltip__body{
+                        opacity: 1;
+                        z-index: 9;
+                        transition-delay: 0.5s;
+                    }
+                }
+            }
+        }
+    }
+
+    tr.row-selected {
+        box-shadow: inset 0px 0px 0px 1px $purple, inset 5px 0px 0px 1px $orange-default;
+        border-top: solid 1px $purple;
+    }
+
+    tr.row-selected + tr.row-selected {
+        border-top: solid 1px #fff;
+    }
+}
+
+
+.table > tbody > tr > td:first-child,
+.table > thead > tr:first-child > th:first-child {
+    padding-left: 25px !important;
+}
+
+.table > tbody > tr > td:last-child,
+.table > thead > tr:first-child > th:last-child {
+    padding-right: 25px !important;
+}
+
+.table-ali-custom {
+    button {
+        margin: 0;
+    }
+}
+
+// Rating
+.table-ali-custom {
+    .td-rating {
+        white-space: nowrap;
+    }
+
+    .ali-rating {
+        font-size: 16px !important;
+    }
+}
+
+// more-photos
+.table-ali-custom {
+    .more-photos {
+        font-size: 15px;
+        width: 35px;
+        height: 35px;
+        padding: 0;
+    }
+}
+
+// Dropdown button
+.table-ali-custom .dropdown-menu--rdb {
+    top: -2px;
+    min-width: 135px;
+
+    .drop-rdb_1 {
+        padding: 3px 5px;
+    }
+
+    label {
+        margin: 0 1px;
+        height: inherit;
+        width: initial;
+        padding: 5px 1px;
+    }
+}
+
+.table--noline {
+    & > thead > tr > th {
+        border-bottom: none;
+    }
+
+    & > thead > tr > th, 
+    & > thead > tr > td, 
+    & > tbody > tr > th, 
+    & > tbody > tr > td, 
+    & > tfoot > tr > th, 
+    & > tfoot > tr > td {
+        border-top: none;
+    }
+}

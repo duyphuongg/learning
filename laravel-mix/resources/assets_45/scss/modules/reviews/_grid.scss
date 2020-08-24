@@ -1,0 +1,114 @@
+$alr-border-radius: 4px;
+
+// Display layout grid
+.grid.alr-wrap-list-rv {
+    .alr-thumbnail {
+        display: none;
+    }
+
+    .alr-rating-wrap .alr-verified:before {
+        display: none;
+    }
+
+    .alr-rating-wrap:after {
+        content: none;
+    }
+}
+
+// Style
+.grid.alr-wrap-list-rv {
+    margin-left: -8px;
+    margin-right: -8px;
+
+    .alr-content {
+        background-color: #fff;
+    }
+
+    .descript{
+        font-weight: normal;
+        font-size: 13px;
+        margin-bottom: 10px;
+        color: #39332E;
+    }
+
+    .alr-img {
+        img {
+            border-radius: $alr-border-radius $alr-border-radius 0 0;
+            object-fit: cover;
+            max-width: 100%;
+            width: 100%;
+            max-height: 280px;
+        }
+    }
+
+    .alr-grid-item {
+        display: inline-block;
+        float: left;
+        margin-top: 0;
+        margin-bottom: 24px;
+        padding-left: 6px;
+        padding-right: 6px;
+
+        .alr-wrap {
+            position: relative;
+            border-radius: $alr-border-radius;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        &.no-prod-img{
+            .alr-content{
+                border-radius: 4px;
+            }
+        }
+    }
+
+    .alr-content {
+        position: relative;
+        padding: 0 20px 12px;
+        border-radius: 0 0 $alr-border-radius $alr-border-radius;
+    }
+
+    .alr-rating-wrap {
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    .count-img {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        z-index: 9;
+        color: #55514E;
+        padding: 2px 9px;
+        font-weight: 500;
+        font-size: 11px;
+        user-select: none;
+        display: block;
+        line-height: inherit;
+        background: rgba(255, 255, 255, 0.6);;
+        border-radius: 4px
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .grid.alr-wrap-list-rv .alr-grid-item {
+        width: 50%;
+        float: left;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .grid.alr-wrap-list-rv .alr-grid-item {
+        width: 100%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .grid.alr-wrap-list-rv  {
+        .alr-grid-item{
+            width: 50%;
+            float: left;
+        }
+    }
+
+}

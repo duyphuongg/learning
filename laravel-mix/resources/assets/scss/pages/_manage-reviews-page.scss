@@ -1,0 +1,292 @@
+.dashboard-manage-reviews-page {
+    .selectActionAllReviews2 + span.select2 {
+		width: 100px !important;
+    }
+    
+    .wrapper-tbl-action {
+        button.wid130 {
+            width: 130px !important;
+        }
+
+        .total-product {
+            display: inline-block;
+            margin-top: 8px;
+        }
+        .action-group{
+            margin-left: 0px;
+        }
+    }
+
+    .table-ali-custom {
+        thead > tr > th {
+            color: $dark-blue;
+        }
+
+        .media-body {
+            vertical-align: middle;
+
+            a {
+                @include text-overflow(2);
+                line-height: 1.5;
+                color: #3b86ff;
+                max-width: 90%;
+            }
+        }
+    }
+
+    .td-rating p {
+        margin: 0;
+    }
+
+    .table-ali-custom tr td button {
+        width: 120px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #selectActionDeleteAllReviews + .select2 {
+        .select2-selection--single,
+        .select2-selection__rendered {
+            background-color: transparent;
+        }
+
+        .select2-selection--single {
+            border: solid 1px transparent;
+        }
+
+        .select2-selection {
+            border-color: transparent !important;
+        }
+
+        // Open dropdown
+        &.select2-container--open {
+            .select2-selection--single,
+            .select2-selection__rendered {
+                background-color: #E9E9F0;
+            }
+
+            .select2-selection {
+                border-color: #e0e0e0 !important;
+            }
+        }
+
+        &:hover {
+            .select2-selection--single {
+                border: solid 1px transparent;
+            }
+
+            .select2-selection--single,
+            .select2-selection__rendered {
+                background-color: #E9E9F0;
+            }
+        }
+    }
+
+    .rel-tooltip{
+        .tooltip{
+            position: absolute;
+            background: #FFFFFF;
+            box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            top: 41px;
+            left: -57px;
+            width: auto;
+            max-width: 260px;
+            &:after{
+                position:absolute;
+                top:-8px;
+                left: 120px;
+                content:"";
+                background: #fff;
+                height: 15px;
+                width: 15px;
+                transform: rotate(45deg);
+                border-bottom:1px solid #fff;
+                border-right:1px solid #fff;
+            }
+            &:before{
+                position: absolute;
+                top: 0px;
+                left: 47px;
+                content: "";
+                background: #fff;
+                height: 10px;
+                width: 20px;
+                z-index: 1;
+            }
+            .tooltip-inner{
+                background-color: #fff;
+                padding: 20px;
+                p{
+                    color: #000;
+                    font-size: 13px;
+                    margin-bottom: 0;
+                }
+                .button--orange{
+                    font-weight: 600;
+                    font-size: 13px;
+                    color: #fff;
+                    text-transform: uppercase;
+                    background-color: $orange-default;
+                }
+            }
+        }
+    }
+}
+
+body.trick-modal-edit-reviews {
+    .modal-backdrop, #editReviewsModal {
+        opacity: 0;
+    }
+}
+
+#modalImportReview {
+    #translate-language + .select2 {
+        width: 130px !important;
+        margin-top: -7px;
+    }
+}
+
+#editReviewsModal {
+    .remove-review-photo {
+        position: absolute;
+        top: 0px;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        cursor: pointer;
+        opacity: 0.5;
+        user-select: none;
+        background-color: #fff;
+        border-radius: 0px 0px 5px 0;
+
+        i {
+            font-size: 18px;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+// Toastr hiển thị khi đạt đến giới hạn product thêm reviews được cho phép
+.toastr-manage-reviews-upgrade {
+    top: 85px !important;
+
+    & > div:hover {
+        cursor: default !important;
+    }
+
+    .upgrade-to-hight-plan:hover {
+        text-decoration: underline !important;
+    }
+
+    & > .toast-warning {
+        width: 380px !important;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABHNCSVQICAgIfAhkiAAAAuJJREFUWIXNmD1P20AYgJ872ySY8CEhUaldKyplqSpVXRhQpQoJVAaG/pp28MCvoQMDqAOVOldUFRuVKlaGIhUhCCHB9l0H2wkkwfE5tumzJb737vGdz6/vFeREe0ia1Gjg0MKmgcUNNgDTBLQIaRDQwucDHSHQecYRxlLPaeBSx4plsuLg49PhiGvhoQoVjGdrljlcumY3NUQNjeKaQ1pZRFMHK1RskIyiMrWTFWapMVO4HEAXgU+DFWbTmo0cWGsE+yyimCpcbBSSW97zd9RGGj2DVcoBKKbYZ3HUpSFBvctCpXIJiim9y8Lg3/cE9R4uErc6qwEkrt67P35PUHtI1PAdVI7DvPb6Xv0ZfMncowgN0kXQ7O9sAaB3sKjxZGywkN8Q4sVkBvo3Sr1NbVJD850/wkNFM+ikv4v6gpPKAYjlsU26iGRFI0FtvGsPkOEqMlwFDkwVMxE7Ce1h84qlTEHSOo2CwzdoTuN/nyKtH0aDq/BZpnZHnEma1I06H0SUkAYTmtQlLo5xoLC2USyjWAZruwS1CBfHRmPlCF3DttYKFxpEY0mUiaD+VcCo2fvwkTYYCCr1LodRfjSWJMh3VqgKG0EIGc8XVWWS3niEEif7AaayTJLgoGQ8g6aUn0kgnsE2vnGgDj8RcELACSr8WIJaRBtfckxnok7KzCTHdKTwCAgJjAKryCQhgfAIot0b0DWsFJSfSerRyiZf1K1sURVmksPIqff86C/M4dOYXKAAHFpig0u4eyZZ5+q/yCoBmg2ukp89QSHQhFw8jtUdQi4E/YkaekU86lLfWdqEocqC2OASyW11VjEh3UE5eKg285NzyJUC8xKyxfmoC+n1wa/M02amHKcYRVtsPfzsj01Teg+3tJKI5EJs0k5vMgaxSZsjzlDpHRmhoj7HyYFpEV0j+RxXXU1JSr7rtIQouIg+Cr3DFDDNNA4+khqSIF4RG0UXhYPC4pYlbsTrHJ91wD8TZe6zMYANQgAAAABJRU5ErkJggg==') !important;
+        background-position: 17px 13px !important;
+        background-color: #fff !important;
+        border: solid 2px #FFB303;
+        box-shadow: 0px 0px 5px #FFB303 !important;
+        border-radius: 5px !important;
+        background-position: 18px 13px;
+        opacity: 1 !important;
+        padding: 15px 15px 15px 70px !important;
+        font-weight: 500 !important;
+
+        & > div {
+            color: #242539;
+        }
+    }
+
+    .toast-progress {
+        background-color: #FFD981 !important;
+    }
+
+    .toast-close-button {
+        color: #E6E7F0 !important;
+        font-weight: 300 !important;
+        font-size: 23px !important;
+        top: -11px !important;
+        opacity: 1 !important;
+
+        &:hover {
+            color: #333 !important;
+        }
+    }
+}
+
+.tooltip-custom {
+    position: relative;
+    .tooltip-custom-text {
+        visibility: hidden;
+        width: 190px;
+        display: block;
+        max-width: 200px;
+        background-color: #344C67;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 10px 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 135%;
+        left: 50%;
+        font-size: 12px;
+        font-weight: normal;
+        margin-left: -95px;
+        p{
+            margin-bottom: 0;
+        }
+    }
+    .tooltip-custom-text::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -2px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #344C67 transparent transparent transparent;
+    }
+    &:hover .tooltip-custom-text {
+        visibility: visible;
+    }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .dashboard-manage-reviews-page .wrapper-tbl-action {
+        .input-group--search {
+            width: 155px;
+        }
+    }
+} 
+
+@media only screen and (max-width: 600px) {
+    .dashboard-manage-reviews-page .wrapper-tbl-action {
+        padding: 0 !important;
+        padding-bottom: 15px !important;
+
+        .input-group--search {
+            width: 100px;
+        }
+
+        .total-product {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .action-group {
+            width: 100px !important;
+            margin: 0 8px !important;
+        }
+
+        .button--primary {
+            width: 65px;
+            padding-left: 10px;
+        }
+    }
+} 

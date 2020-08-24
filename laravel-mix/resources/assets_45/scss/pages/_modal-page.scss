@@ -1,0 +1,331 @@
+
+.modal {
+    text-align: center;
+    padding: 0 !important;
+}
+  
+.modal:before {
+    content: '';
+    display: inline-block;
+    height: 75%;
+    vertical-align: middle;
+    margin-right: -4px;
+}
+
+.modal.modal-center:before {
+    height: 90%;
+}
+  
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.ali-modal {
+    .modal-dialog {
+        max-width: 400px;
+
+        .modal-content {
+            padding: 50px 30px 45px 30px;
+        }
+    }
+
+    &.ali-modal--form {
+        .modal-dialog {
+            max-width: 470px;
+        }
+        
+        .modal-content {
+            padding: 45px 15px 35px 15px;
+        }
+    }
+
+    button,
+    a {
+        &.fz13 {
+            padding-bottom: 9px;
+        }
+    }
+    .modal-header {
+        padding: 0;
+        margin-top: -30px !important;
+        margin-right: 1px;
+
+        .close {
+            opacity: 1;
+            outline: none !important;
+            
+            i {
+                font-size: 16px;
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .modal-footer {
+        padding: 0;
+    }
+
+    &--style-great {
+        .modal-footer {
+            button {
+                padding-top: 15px;
+                padding-bottom: 20px;
+            }
+        }
+    }
+
+    &--style-get-review {
+        .modal-footer {
+            padding-left: 45px !important;
+            padding-right: 45px !important;
+
+            button {
+                width: 130px;
+            }
+        }
+
+        .select2-selection__rendered {
+            font-weight: 600;
+        }
+    }
+}
+
+
+#modalDiscountHandle {
+    color: #242539;
+
+    .modal-dialog {
+        max-width: 400px;
+    }
+
+    .modal-content {
+        position: relative;
+        border-radius: 0px;
+        padding: 50px 63px 20px 63px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+
+
+        .modal-body{
+            padding: 15px 0px;
+        }
+        
+        .close{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            i {
+                color: #d4d4d4;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .border-error{
+        border: solid 1px #f94c4e !important;
+    }
+
+    .text-danger{
+        color: #f94c4e !important;
+        font-size: 11px;
+    }
+
+    img {
+        max-width: 92px;
+        margin-bottom: 20px;
+    }
+
+    .package_name {
+        color: #242539;
+    }
+
+    .form-group {
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    .total-payment {
+        font-size: 35px;
+        font-weight: bold;
+        color: #ff881b;
+        padding-top: 15px;
+
+        &__month{
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+
+    p {
+        padding:0;
+        margin:0;
+        b {
+            font-weight: bold;
+        }
+    }
+
+    label {
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    input[name="discount_code"] {
+        margin-top:7px;
+        height: 40px;
+        border-radius: 4px;
+        border: solid 1px #d7dae2;
+    }
+
+    .border-dash {
+        background-image: linear-gradient(to right, #92929C 60%,#ffffff 0%);
+        background-position: top;
+        background-size: 12px 1px;
+        background-repeat: repeat-x;
+        height: 15px;
+    }
+
+    button[type="submit"] {
+        width: 140px;
+        height: 35px;
+        border-radius: 4px;
+        background-color: #ff881b;
+        font-size: 13px;
+        font-weight: 600;
+        color: #fff;
+        margin-top: 10px;
+        border: none;
+    }
+
+    .accept-voucher:hover {
+        background-color: #ee6b0d;
+    }
+}
+
+#deleteDataModal {
+    color: #242539;
+    .modal-dialog {
+        max-width: 430px;
+        width: 430px;
+        .modal-content{
+            padding: 30px 55px 25px;
+            position: relative;
+            
+            button.close-icon {
+                position: absolute;
+                top: 0px;
+                right: 4px;
+                background: transparent;
+                border: none;
+                font-size: 20px;
+                font-weight: 300;
+                color: #a4afb7;
+            }
+        }
+    }
+
+    .change-text-plan{
+        line-height: normal;
+    }
+
+    .w-135px{
+        min-width: 135px;
+    }
+}
+
+#formVoteForUs {
+    color: #242539;
+
+    h4 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    a {
+        color: #242539;
+    }
+
+    .material-icons {
+        font-size: 30px;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 23px;
+    }
+
+    .vote-for-us-btn-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            color: #fff;
+        }
+
+        a, button {
+            line-height: 1.4;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
+    label.error{
+        color: red;
+        font-weight: normal;
+    }
+    .close{
+        position: absolute;
+        top: 8px;
+        right: -35px;
+    }
+}
+.modal.ali--transparent {
+    background: transparent;
+    box-shadow: 0px 0px 0px;
+    border: none;
+
+    .modal-content {
+        background: transparent;
+        box-shadow: 0px 0px 0px;
+        border: none;
+    }
+}
+
+#modalInstallChromeExtension{
+    .modal-dialog {
+        .modal-content{
+            padding: 40px 15px 15px 15px;
+            .modal-header {
+                .close {
+                    margin-right: -5px;
+                    i{
+                        font-size: 20px;
+                        color: #828282;
+                        font-weight: 600;
+                    }
+                    &:hover{
+                        i{
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .button--primary{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .button--got-it{
+        border: none;
+        color: #92929C;
+        font-weight: 500;
+        margin-top: 15px;
+        &:hover{
+            color: $color-text;
+        }
+    }
+}

@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <app-test></app-test>
+    <NextTick/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
 import Test from './components/Test'
+import NextTick from './components/nextTick'
 
 export default {
   name: 'App',
   components: {
     HelloWorld, 
-    'app-test' : Test
+    'app-test' : Test,
+    NextTick
   }
 }
 </script>

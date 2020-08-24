@@ -1,0 +1,747 @@
+@import "reviews-front-end/style-core";
+
+.alireview-owl-carousel .alireview-owl-stage {
+  display: flex;
+}
+$height_author: 32px;
+$mar_top_author: 15px;
+$mar_bottom_author: 12px;
+$height_reaction: 24px;
+$mar_reaction: 6px;
+$height_content: 175px;
+$pad_content: 16px;
+$pad_ratting_no_product: 15px;
+$height_rating: 26px;
+$height_card: 535px;
+$height_card_not_review_image: 210px;
+
+$height_card_2: 375px;
+
+$height_card_3: 375px;
+$mar_reaction_3: 6px;
+
+$height_card_4: 405px;
+$mar_reaction_4: 6px;
+$height_author_4: 61px;
+$height_content_4: 205px;
+$height_card_not_review_image_4: 239px;
+
+#shopify-ali-review{
+
+  .alireview-result{
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  .list-alireview{
+    position: relative;
+    .count-img{
+      top: 24px;
+      right: 13px;
+    }
+    .alireview-row{
+      padding: 0px;
+      padding-top: 15px;
+      height: 100%;
+    }
+    .alireview-row-wrap{
+      height: $height_card;
+      max-height: $height_card;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 4px 4px 4px 4px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .alireview-thumbnail{
+      float: none;
+      width: 100%;
+    }
+    .alireview-product-img{
+      background-color: #3b3b3b;
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      max-height: 360px;
+      height: 360px;
+      position: relative;
+      img{
+        height: auto;
+        display: none;
+        width: auto;
+        height: auto;
+        margin: auto !important;
+        max-height: 100%;
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        &:nth-child(1){
+          display: block;
+        }
+      }
+    }
+    .alireview-product-img--double{
+      display: flex;
+      img{
+        display: none;
+        width: 50%;
+        &:nth-child(1), &:nth-child(2){
+          display: block;
+        }
+      }
+    }
+    .alireview-content{
+      position: relative;
+      padding: 0 20px 10px;
+      height: 100%;
+      min-height: $height_content;
+      .alireview-desc{
+        float: none;
+        height: calc(100% - #{$height_author} - #{$mar_bottom_author} - #{$height_rating});
+        width: 100%;
+        .alireview-post{
+          overflow: hidden;
+          text-overflow: ellipsis;
+          word-break: break-word;
+          height: 100%;
+          max-height: calc(100% - #{$height_reaction} - #{$mar_reaction});
+          p{
+            font-size: 14px;
+            line-height: 19.5px;
+            font-weight: 400;
+          }
+        }
+      }
+      .alireview-header{
+        text-align: center;
+      }
+      .alireview-status{
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 26px;
+        top: -13px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 40px;
+        padding: 0 12px 1px;
+      }
+      .alireview-like-wrap{
+        margin-top: $mar_reaction;
+      }
+      .alireview-date{
+        color: #C9C9C9;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+    .alireview-row {
+      &.has-prod-imgs{
+        .alireview-row-wrap {
+          .alireview-content {
+            max-height: $height_content;
+          }
+        }
+      }
+      &.no-prod-img {
+        .alireview-row-wrap {
+          height: calc(#{$height_card} - #{$pad_ratting_no_product});
+          max-height: calc(#{$height_card} - #{$pad_ratting_no_product});
+        }
+      }
+    }
+
+    .alireview-owl-carousel{
+      .alireview-owl-stage-outer {
+        height: 100% !important;
+        padding-bottom: 15px;
+      }
+      .alireview-owl-nav{
+        position: unset;
+        [class*=alireview-owl-]{
+          position: absolute;
+          background: transparent;
+          top: 40%;
+          transform: translateY(60%);
+          cursor: pointer;
+          i{
+            color: #000;
+            opacity: 0.3;
+            font-size: 38px;
+            &:hover{
+              opacity: 1;
+            }
+          }
+        }
+        .alireview-owl-prev{
+          left: -40px;
+        }
+        .alireview-owl-next{
+          right: -40px;
+        }
+      }
+    }
+
+    &.alireview-hide-reaction.alireview-hide-date.ali-hide-rating-star:not(.alireview-hide-image){
+      .alireview-row-wrap{
+        height: calc(#{$height_card} - #{$height_reaction} - #{$mar_reaction} + #{$mar_top_author} - #{$height_rating});
+        max-height: calc(#{$height_card} - #{$height_reaction} - #{$mar_reaction} + #{$mar_top_author} - #{$height_rating});
+      }
+      .alireview-row{
+        &.has-prod-imgs {
+          .alireview-row-wrap {
+            .alireview-content{
+              max-height: calc(#{$height_content} - #{$height_reaction} - #{$mar_reaction} + #{$mar_top_author} - #{$height_rating});
+              min-height: calc(#{$height_content} - #{$height_reaction} - #{$mar_reaction} + #{$mar_top_author} - #{$height_rating});
+              .alireview-desc {
+                height: calc(100% -  #{$height_author}  - #{$mar_bottom_author} - #{$mar_top_author});
+                .alireview-post{
+                  max-height: 100%
+                }
+              }
+            }
+          }
+        }
+        &.no-prod-img {
+          .alireview-row-wrap {
+            .alireview-content{
+              .alireview-desc {
+                .alireview-post{
+                  max-height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+      .alireview-content{
+        .alireview-desc .alireview-post p{
+          margin-bottom: 0;
+        }
+        .alireview-like-wrap{
+          margin-top: 0;
+        }
+      }
+    }
+    &.alireview-hide-reaction.alireview-hide-date:not(.ali-hide-rating-star):not(.alireview-hide-image) {
+      .alireview-row{
+        .alireview-row-wrap{
+          height: calc(#{$height_card} - #{$height_reaction} - #{$mar_reaction});
+          max-height: calc(#{$height_card} - #{$height_reaction} - #{$mar_reaction});
+        }
+        &.has-prod-imgs {
+          .alireview-row-wrap {
+            .alireview-content{
+              max-height: calc(#{$height_content} - #{$height_reaction} - #{$mar_reaction});
+              min-height: calc(#{$height_content} - #{$height_reaction} - #{$mar_reaction});
+              .alireview-desc {
+                height: calc(100% -  #{$height_author} - #{$mar_bottom_author} - #{$height_rating});
+                .alireview-post{
+                  max-height: 100%
+                }
+              }
+            }
+          }
+        }
+        &.no-prod-img {
+          .alireview-row-wrap {
+            height: calc(#{$height_card} - #{$height_reaction} - #{$mar_reaction} - #{$pad_ratting_no_product});
+            max-height: calc(#{$height_card} - #{$height_reaction} - #{$mar_reaction} - #{$pad_ratting_no_product});
+            .alireview-content{
+              .alireview-desc {
+                .alireview-post{
+                  max-height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &.alireview-hide-image{
+      .alireview-owl-carousel {
+        .alireview-owl-nav [class*=alireview-owl-]{
+          top: 30%;
+          transform: translateY(70%);
+        }
+      }
+      .alireview-row{
+        .alireview-row-wrap {
+          height: $height_card_not_review_image;
+          max-height: $height_card_not_review_image;
+        }
+      }
+    }
+    &.alireview-hide-image.ali-hide-rating-star{
+      .alireview-row{
+        .alireview-row-wrap {
+          height: calc(#{$height_card_not_review_image} - #{$height_rating} + #{$mar_top_author});
+          max-height: calc(#{$height_card_not_review_image} - #{$height_rating} + #{$mar_top_author});
+          .alireview-content{
+            .alireview-desc{
+              height: calc(100% - #{$height_author} - #{$mar_top_author} - #{$mar_bottom_author});
+            }
+          }
+        }
+      }
+    }
+    &.alireview-hide-image.alireview-hide-reaction.alireview-hide-date:not(.ali-hide-rating-star){
+      .alireview-row{
+        .alireview-row-wrap {
+          height: calc(#{$height_card_not_review_image} - #{$height_reaction} - #{$mar_reaction});
+          max-height: calc(#{$height_card_not_review_image} - #{$height_reaction} - #{$mar_reaction});
+          .alireview-content{
+            .alireview-desc{
+              height: calc(100% - #{$height_author} - #{$height_rating} - #{$mar_bottom_author});
+              .alireview-post{
+                max-height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.alireview-hide-image.alireview-hide-reaction.alireview-hide-date.ali-hide-rating-star{
+      .alireview-row{
+        .alireview-row-wrap {
+          height: calc(#{$height_card_not_review_image} - #{$height_rating} + #{$mar_top_author} - #{$height_reaction} - #{$mar_reaction});
+          max-height: calc(#{$height_card_not_review_image} - #{$height_rating} + #{$mar_top_author} - #{$height_reaction} - #{$mar_reaction});
+          .alireview-content{
+            .alireview-desc{
+              height: calc(100% - #{$height_author} - #{$mar_top_author} - #{$mar_bottom_author});
+              .alireview-post{
+                max-height: 100%;
+              }
+            }
+          }
+        }
+      }
+      .alireview-owl-carousel {
+        .alireview-owl-nav [class*=alireview-owl-]{
+          top: 20%;
+          transform: translateY(80%);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #shopify-ali-review {
+    .list-alireview {
+      &.ali-hide-rating-star:not(.alireview-hide-image) {
+        .alireview-row-wrap {
+          height: calc(#{$height_card} - #{$height_rating} + #{$mar_top_author});
+          max-height: calc(#{$height_card} - #{$height_rating + #{$mar_top_author}});
+        }
+
+        .alireview-row {
+          &.has-prod-imgs {
+            .alireview-row-wrap {
+              .alireview-content {
+                max-height: calc(#{$height_content} - #{$height_rating} + #{$mar_top_author});
+                min-height: calc(#{$height_content} - #{$height_rating} + #{$mar_top_author});
+
+                .alireview-desc {
+                  height: calc(100% - #{$height_author} - #{$mar_top_author} - #{$mar_bottom_author});
+
+                  .alireview-post {
+                    max-height: calc(100% - #{$height_reaction} - #{$mar_reaction});
+                  }
+                }
+              }
+            }
+          }
+
+          &.no-prod-img {
+            .alireview-row-wrap {
+              height: calc(#{$height_card} - #{$height_rating} + #{$mar_top_author});
+              max-height: calc(#{$height_card} - #{$height_rating + #{$mar_top_author}});
+
+              .alireview-content {
+                .alireview-desc {
+                  height: calc(100% - #{$height_author} - #{$mar_top_author} - #{$mar_bottom_author});
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #shopify-ali-review {
+    .list-alireview{
+      .alireview-owl-carousel{
+        .alireview-owl-nav {
+          .alireview-owl-next{
+            right: -30px;
+          }
+          .alireview-owl-prev{
+            left: -30px;
+          }
+        }
+      }
+
+      .alireview-product-img {
+        height: 200px;
+      }
+      &:not(.alireview-hide-image){
+        .alireview-row{
+          &.has-prod-imgs {
+            .alireview-row-wrap{
+              height: $height_card_2;
+              max-height: $height_card_2;
+            }
+          }
+          &.no-prod-img {
+            .alireview-row-wrap{
+              height: calc(#{$height_card_2} - #{$pad_ratting_no_product});
+              max-height: calc(#{$height_card_2} - #{$pad_ratting_no_product});
+            }
+          }
+        }
+      }
+
+      &.alireview-hide-reaction.alireview-hide-date.ali-hide-rating-star:not(.alireview-hide-image){
+        .alireview-row {
+          .alireview-row-wrap {
+            height: calc(#{$height_card_2} - #{$height_reaction} - #{$mar_reaction} - #{$pad_ratting_no_product});
+            max-height: calc(#{$height_card_2} - #{$height_reaction} - #{$mar_reaction} - #{$pad_ratting_no_product});
+          }
+        }
+      }
+      &.alireview-hide-reaction.alireview-hide-date:not(.ali-hide-rating-star):not(.alireview-hide-image) {
+        .alireview-row{
+          .alireview-row-wrap{
+            height: calc(#{$height_card_2} - #{$height_reaction} - #{$mar_reaction});
+            max-height: calc(#{$height_card_2} - #{$height_reaction} - #{$mar_reaction});
+          }
+        }
+        .alireview-row {
+          &.no-prod-img {
+            .alireview-row-wrap {
+              height: calc(#{$height_card_2} - #{$height_reaction} - #{$mar_reaction} - #{$pad_ratting_no_product});
+              max-height: calc(#{$height_card_2} - #{$height_reaction} - #{$mar_reaction} - #{$pad_ratting_no_product});
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1200px) and (min-width: 576px) {
+  #shopify-ali-review {
+    .list-alireview {
+      &.ali-hide-rating-star:not(.alireview-hide-image){
+        .alireview-row{
+          &.has-prod-imgs {
+            .alireview-row-wrap {
+              height: calc(#{$height_card_2} - #{$height_rating} + #{$mar_top_author});
+              max-height: calc(#{$height_card_2} - #{$height_rating + #{$mar_top_author}});
+              .alireview-content{
+                max-height: calc(#{$height_content} - #{$height_rating} + #{$mar_top_author});
+                min-height: calc(#{$height_content} - #{$height_rating} + #{$mar_top_author});
+                .alireview-desc {
+                  height: calc(100% - #{$height_author} - #{$mar_top_author} - #{$mar_bottom_author});
+                  .alireview-post{
+                    max-height: calc(100% - #{$height_reaction} - #{$mar_reaction});
+                  }
+                }
+              }
+            }
+          }
+          &.no-prod-img {
+            .alireview-row-wrap {
+              height: calc(#{$height_card_2} - #{$height_rating} + #{$mar_top_author});
+              max-height: calc(#{$height_card_2} - #{$height_rating + #{$mar_top_author}});
+              .alireview-content{
+                .alireview-desc {
+                  height: calc(100% - #{$height_author} - #{$mar_top_author} - #{$mar_bottom_author});
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px)  and (min-width: 577px){
+  #shopify-ali-review {
+      .alireview-row-wrap {
+        width: 300px;
+      }
+  }
+}
+@media only screen and (max-width: 576px) and (min-width: 376px) {
+  #shopify-ali-review {
+    .list-alireview {
+      .alireview-row-wrap {
+        width: 315px;
+      }
+      &::not(.alireview-hide-image){
+        .alireview-row{
+          &.has-prod-imgs .alireview-row-wrap {
+            height: $height_card_3;
+            max-height: $height_card_3;
+            .alireview-content{
+              min-height: 175px;
+              max-height: 175px;
+            }
+          }
+          &.no-prod-img .alireview-row-wrap{
+            height: calc(#{$height_card_3} - #{$pad-ratting_no_product});
+            max-height: calc(#{$height_card_3} - #{$pad-ratting_no_product});
+          }
+        }
+        .alireview-row {
+          .alireview-row-wrap {
+            .alireview-content {
+              .alireview-desc {
+                .alireview-post {
+                  max-height: calc(100% - #{$height_reaction} - #{$mar_reaction_3});
+                }
+              }
+            }
+          }
+        }
+      }
+      
+      &.ali-hide-rating-star:not(.alireview-hide-image){
+        .alireview-row{
+          .alireview-row-wrap{
+            height: calc(#{$height_card_3} - #{$height_rating} + #{$mar_top_author});
+            max-height: calc(#{$height_card_3} - #{$height_rating} + #{$mar_top_author});
+            .alireview-content {
+              min-height:  calc(175px - #{$height_rating} + #{$mar_top_author});
+              max-height: calc(175px - #{$height_rating} + #{$mar_top_author});
+              .alireview-desc{
+                height: calc(100% - #{$height_rating} + #{$mar_top_author} - #{$mar_bottom_author} - #{$height_author});
+                .alireview-post{
+                  max-height: calc(100% - #{$height_reaction} - #{$mar_reaction_3});
+                }
+              }
+            }
+          }
+          &.no-prod-img{
+            .alireview-row-wrap {
+              .alireview-content {
+                min-height: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+        }
+      }
+      &.alireview-hide-reaction.alireview-hide-date.ali-hide-rating-star{
+        .alireview-row-wrap{
+          height: calc(#{$height_card_3} - #{$height_rating} + #{$mar_top_author} -  #{$height_reaction} - #{$mar_reaction_3});
+          max-height: calc(#{$height_card_3} - #{$height_rating} + #{$mar_top_author} -  #{$height_reaction} - #{$mar_reaction_3});
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 375px) {
+  #shopify-ali-review {
+    .list-alireview{
+      &:not(.alireview-hide-image){
+        .alireview-row.has-prod-imgs {
+          .alireview-row-wrap{
+            height: $height_card_4;
+            max-height: $height_card_4;
+            .alireview-content{
+              max-height: $height_content_4;
+            }
+          }
+        }
+        .alireview-row.no-prod-img {
+          .alireview-row-wrap{
+            height: calc(#{$height_card_4} - 15px);
+            max-height: calc(#{$height_card_4} - 15px);
+            .alireview-content{
+              .alireview-desc{
+                .alireview-post{
+                  max-height: calc(100% - 24px - 6px);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .alireview-row-wrap {
+        width: 270px
+      }
+      .alireview-content{
+        .alireview-desc{
+          height: calc(100% - #{$height_rating} - #{$height_author_4} - #{$mar-bottom_author});
+          .alireview-post{
+            max-height: calc(100% - #{$height_reaction} - #{$mar_reaction_4});
+          }
+        }
+      }
+
+      .alireview-author-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .alireview-author{
+          max-width: 88%;
+        }
+        .alireview-author__avatar{
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          margin-bottom: 5px;
+          img{
+            margin-right: 0;
+          }
+          .alireview-fa-check-circle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: calc(50% + 10px);
+            transform: translateX(-50%);
+            width: 13px;
+            height: 13px
+          }
+        }
+      }
+      
+      &.ali-hide-rating-star:not(.alireview-hide-image){
+        .alireview-row{
+          .alireview-row-wrap{
+            height: calc(#{$height_card_4} - #{$height_rating} + #{$mar_top_author});
+            max-height: calc(#{$height_card_4} - #{$height_rating} + #{$mar_top_author});
+            .alireview-content {
+              min-height:  calc(#{$height_content_4} - #{$height_rating} + #{$mar_top_author});
+              max-height: calc(#{$height_content_4} - #{$height_rating} + #{$mar_top_author});
+              .alireview-desc{
+                height: calc(100% - #{$height_rating} + #{$mar_top_author} - #{$mar_bottom_author} - #{$height_author_4});
+                .alireview-post{
+                  max-height: calc(100% - #{$height_reaction} - #{$mar_reaction_4});
+                }
+              }
+            }
+          }
+          &.no-prod-img{
+            .alireview-row-wrap {
+              .alireview-content {
+                min-height: 100%;
+                max-height: 100%;
+              }
+            }
+          }
+        }
+      }
+      &.alireview-hide-reaction.alireview-hide-date.ali-hide-rating-star:not(.alireview-hide-image){
+        .alireview-row{
+          &.has-prod-imgs {
+            .alireview-row-wrap {
+              height: calc(#{$height_card_4} - #{$height_rating} + #{$mar_top_author} -  #{$height_reaction} - #{$mar_reaction_4});
+              max-height: calc(#{$height_card_4} - #{$height_rating} + #{$mar_top_author} -  #{$height_reaction} - #{$mar_reaction_4});
+              .alireview-content {
+                max-height: calc(#{$height_content_4} - #{$height_rating} + #{$mar_top_author} -  #{$height_reaction} - #{$mar_reaction_4});
+                .alireview-desc{
+                    height: calc(100% - #{$height_rating} - #{$mar_top_author} - #{$mar_bottom_author} - #{$height_reaction} - #{$mar_reaction_4}) !important;
+                }
+              }
+            }
+          }
+          &.no-prod-img {
+            .alireview-row-wrap{
+              height: calc(#{$height_card_4} - #{$height_rating} + #{$mar_top_author} -  #{$height_reaction} - #{$mar_reaction_4});
+              max-height: calc(#{$height_card_4} - #{$height_rating} + #{$mar_top_author} -  #{$height_reaction} - #{$mar_reaction_4});
+            }
+          }
+        }
+      }
+      &.alireview-hide-reaction.alireview-hide-date:not(.ali-hide-rating-star):not(.alireview-hide-image) {
+        .alireview-row {
+          &.has-prod-imgs {
+            .alireview-row-wrap {
+              height: calc(#{$height_card_4} -  #{$height_reaction} - #{$mar_reaction_4});
+              max-height: calc(#{$height_card_4} -  #{$height_reaction} - #{$mar_reaction_4});
+            }
+          }
+          &.no-prod-img {
+            .alireview-row-wrap {
+              height: calc(#{$height_card_4} -  #{$height_reaction} - #{$mar_reaction_4} - #{$pad_ratting_no_product});
+              max-height: calc(#{$height_card_4} -  #{$height_reaction} - #{$mar_reaction_4} - #{$pad_ratting_no_product});
+            }
+            .alireview-content .alireview-desc{
+              height: calc(100% - #{$height_rating} -  #{$height_author_4} - #{$mar_bottom_author});
+            }
+          }
+        }
+      }
+      &.alireview-hide-image{
+        .alireview-row{
+          .alireview-row-wrap {
+            height: $height_card_not_review_image_4;
+            max-height: $height_card_not_review_image_4;
+          }
+        }
+      }
+      &.alireview-hide-image.ali-hide-rating-star{
+        .alireview-row{
+          .alireview-row-wrap {
+            height: calc(#{$height_card_not_review_image_4} - #{$height_rating} + #{$mar_top_author});
+            max-height: calc(#{$height_card_not_review_image_4} - #{$height_rating} + #{$mar_top_author});
+            .alireview-content{
+              .alireview-desc{
+                height: calc(100% - #{$height_author_4} - #{$mar_top_author} - #{$mar_bottom_author});
+              }
+            }
+          }
+        }
+      }
+      &.alireview-hide-image.alireview-hide-reaction.alireview-hide-date:not(.ali-hide-rating-star){
+        .alireview-row{
+          .alireview-row-wrap {
+            height: calc(#{$height_card_not_review_image_4} - #{$height_reaction} - #{$mar_reaction});
+            max-height: calc(#{$height_card_not_review_image_4} - #{$height_reaction} - #{$mar_reaction});
+            .alireview-content{
+              .alireview-desc{
+                height: calc(100% - #{$height_author_4} - #{$height_rating} - #{$mar_bottom_author});
+                .alireview-post{
+                  max-height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+      &.alireview-hide-image.alireview-hide-reaction.alireview-hide-date.ali-hide-rating-star{
+        .alireview-row{
+          .alireview-row-wrap {
+            height: calc(#{$height_card_not_review_image_4} - #{$height_rating} + #{$mar_top_author} - #{$height_reaction} - #{$mar_reaction_4});
+            max-height: calc(#{$height_card_not_review_image_4} - #{$height_rating} + #{$mar_top_author} - #{$height_reaction} - #{$mar_reaction_4});
+            .alireview-content{
+              .alireview-desc{
+                height: calc(100% - #{$height_author_4} - #{$mar_top_author} - #{$mar_bottom_author});
+                .alireview-post{
+                  max-height: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// <div id="shopify-ali-review" class="choose_class_only_screen">
+// Only screen: mobile-xs
+@import "only-screen/mobile-xs/style-carousel";

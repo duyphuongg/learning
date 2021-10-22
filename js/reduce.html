@@ -44,15 +44,7 @@
     }
     */
 
-    const group = (arr, propety) => arr.reduce((acc, curr) => {
-        let key = curr[propety]
-        if(!acc[key]){
-            acc[key] = []
-        }
-        acc[key].push(curr)
-        return acc
-    }, {})
-    console.log("group -> group", group(people, 'age'))
+    
 
     // friends - an array of objects 
     // where object field "books" - list of favorite books 

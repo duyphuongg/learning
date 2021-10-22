@@ -1,0 +1,30 @@
+<svg width="152" height="111" viewBox="0 0 152 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="151" height="110" rx="3.5" fill="white" stroke="#FF881B"/>
+<g opacity="0.5">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="1" y="1" width="150" height="108">
+<rect x="1.5" y="1.5" width="149" height="107" rx="2.5" fill="white" stroke="#D7DAE2"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="60.0039" y="45.5" width="32.9919" height="49" rx="3.5" fill="white" stroke="#FF881B"/>
+<path d="M60 49C60 46.7909 61.7909 45 64 45H89C91.2091 45 93 46.7909 93 49V78H60V49Z" fill="#FF881B"/>
+<rect x="64" y="83" width="15" height="2" rx="1" fill="#FF881B"/>
+<rect x="64" y="87" width="11" height="2" rx="1" fill="#FF881B"/>
+<rect x="20.5" y="45.5" width="32.9919" height="49" rx="3.5" fill="white" stroke="#FF881B"/>
+<path d="M20 49C20 46.7909 21.7909 45 24 45H50C52.2091 45 54 46.7909 54 49V78H20V49Z" fill="#FF881B"/>
+<rect x="25" y="83" width="15" height="2" rx="1" fill="#FF881B"/>
+<rect x="25" y="87" width="11" height="2" rx="1" fill="#FF881B"/>
+<rect x="99.5078" y="45.5" width="32.9919" height="48.1667" rx="3.5" fill="white" stroke="#FF881B"/>
+<path d="M99 49C99 46.7909 100.791 45 103 45H129C131.209 45 133 46.7909 133 49V78H99V49Z" fill="#FF881B"/>
+<rect x="104" y="83" width="15" height="2" rx="1" fill="#FF881B"/>
+<rect x="104" y="87" width="11" height="2" rx="1" fill="#FF881B"/>
+<line x1="140" y1="32.5" x2="11" y2="32.5" stroke="#FF881B"/>
+<rect x="11.5" y="8.5" width="19" height="19" rx="3.5" fill="white" stroke="#FF881B"/>
+<rect x="125" y="15" width="15" height="6" rx="2" fill="#FF881B"/>
+<rect x="37" y="11" width="25" height="2" rx="1" fill="#FF881B"/>
+<rect x="37" y="17" width="16" height="2" rx="1" fill="#FF881B"/>
+<rect x="37" y="23" width="19" height="2" rx="1" fill="#FF881B"/>
+<path d="M11.5977 67.3438C11.4395 67.502 11.4395 67.7656 11.5977 67.9238L15.0078 71.3516C15.1836 71.5098 15.4473 71.5098 15.6055 71.3516L16.0098 70.9473C16.168 70.7891 16.168 70.5254 16.0098 70.3496L13.3027 67.625L16.0098 64.918C16.168 64.7422 16.168 64.4785 16.0098 64.3203L15.6055 63.916C15.4473 63.7578 15.1836 63.7578 15.0078 63.916L11.5977 67.3438Z" fill="#FF881B"/>
+<path d="M142.01 67.9238C142.168 67.7656 142.168 67.502 142.01 67.3438L138.6 63.916C138.424 63.7578 138.16 63.7578 138.002 63.916L137.598 64.3203C137.439 64.4785 137.439 64.7422 137.598 64.918L140.305 67.625L137.598 70.3496C137.439 70.5254 137.439 70.7891 137.598 70.9473L138.002 71.3516C138.16 71.5098 138.424 71.5098 138.6 71.3516L142.01 67.9238Z" fill="#FF881B"/>
+</g>
+</g>
+</svg>

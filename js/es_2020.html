@@ -32,6 +32,16 @@
         let op_chaining = anonystick?.profile?.website ?? 'phuong'
         console.log("op_chaining", op_chaining) //anonystick.com
 
+        // (function(name){
+        //     console.log(name);
+        // }('Phuong'))
+
+
+        $('#shopify-section-pr_description ul li.tab_title_block, #shopify-section-pr_description .panel.entry-content').removeClass('active')
+        $('#shopify-section-pr_description .panel.entry-content').removeClass('active').addClass('dn').css('display', 'none')
+        $('#shopify-section-pr_description ul li.review-tab, #shopify-section-pr_description .panel#tab_pr_reivew').addClass('active')
+        $('#shopify-section-pr_description .panel#tab_pr_reivew').addClass('active').css('display', 'block')
+
 
 
     </script>

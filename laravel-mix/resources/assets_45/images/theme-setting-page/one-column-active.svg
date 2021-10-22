@@ -1,0 +1,20 @@
+<svg width="152" height="111" viewBox="0 0 152 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="151" height="110" rx="3.5" fill="#FFE7D1" fill-opacity="0.5" stroke="#FF881B"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="1" y="1" width="150" height="109">
+<rect x="1.5" y="1.5" width="149" height="108" rx="2.5" fill="white" stroke="#D7DAE2"/>
+</mask>
+<g mask="url(#mask0)">
+<rect x="24" y="1" width="103" height="109" fill="white"/>
+<g opacity="0.5">
+<line x1="118" y1="32.5" x2="34" y2="32.5" stroke="#FF881B"/>
+<rect x="33.5" y="8.5" width="19" height="19" rx="3.5" fill="white" stroke="#FF881B"/>
+<rect x="103" y="15" width="15" height="6" rx="2" fill="#FF881B"/>
+<rect x="59" y="11" width="25" height="2" rx="1" fill="#FF881B"/>
+<rect x="59" y="17" width="16" height="2" rx="1" fill="#FF881B"/>
+<rect x="59" y="23" width="19" height="2" rx="1" fill="#FF881B"/>
+<rect x="33.5" y="39.5" width="84.3044" height="45" rx="3.5" fill="white" stroke="#FF881B"/>
+<path d="M33 43C33 40.7909 34.7909 39 37 39H114.304C116.514 39 118.304 40.7909 118.304 43V68H33V43Z" fill="#FF881B"/>
+<rect x="33.5" y="91.5" width="84.3044" height="45" rx="3.5" fill="white" stroke="#FF881B"/>
+</g>
+</g>
+</svg>

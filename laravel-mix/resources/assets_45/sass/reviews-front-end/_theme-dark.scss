@@ -1,0 +1,270 @@
+$color-white: #fff;
+$color-dark: #1e1e1e;
+$color-gray-dark: #2C2C30;
+
+%form-review{
+  .alireview-add-form{
+    .alireview-form-group {
+      label{
+        color: #fff;
+      }
+      .alireview-input-text[readonly], .alireview-input-textarea[readonly],
+      textarea[readonly], input[readonly]{
+        background-color: transparent !important;
+      }
+      .alireview_loading_upload{
+        background-color: rgba(237, 237, 237, 0.13);
+      }
+      input, textarea{
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: transparent;
+        color: $color-white;
+        &:focus{
+          border-color: $color-white;
+        }
+      }
+      &.upload-file{
+        .alireview-file-upload-wrap {
+          .alireview-file-upload-label{
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            &:hover{
+              background: rgba(255, 255, 255, 0.1);
+            }
+          }
+        }
+      }
+    }
+    .alireview_list_image {
+      li {
+        .alireview_del_img{
+          background: $color-white;
+          color: #525252;
+          &:hover{
+            background: rgba(255, 255, 255, 0.8);
+          }
+        }
+      }
+    }
+  }
+  .alireview-thankyou{
+    h4, .alireview-thankyou__message{
+      color: $color-white;
+    }
+  }
+}
+.ali-review-theme-dark{
+  .alireview-btn--1{
+    background-color: $color-white;
+    color: $color-dark;
+  }
+  .alireview-btn--2{
+    color: $color-white;
+    border: 1px solid $color-white;
+    &:hover {
+      background-color: #3A3A3A;
+    }
+  }
+
+}
+
+.ali-review-theme-dark{
+  .ali-verify-buyer, .arl-verify{
+    &:hover{
+      &::before{
+        background: #FFFFFF;
+        color: #39332E;
+      }
+      &::after{
+        background: #FFFFFF;
+      }
+    }
+  }
+  &.ar-modal-popup-reviews--body .ar-popup-reviews__product-thumbnail .lc-list-thumbnail{
+    background: linear-gradient(180deg, rgba(51, 51, 51, 0) 0%, #1E1E1E 100%);
+  }
+  &.ar-modal-popup-reviews--body .ar-popup-reviews__product-thumbnail{
+    border-right: unset;
+  }
+}
+
+#shopify-ali-review{
+  &.ali-review-theme-dark{
+    background: $color-dark;
+    .alireview-form-title, .alireview-total-text{
+      color: $color-white;
+    }
+    .alireview-sort{
+      .alireview-sort__label{
+        color: $color-white;
+      }
+      .alireview-sort__type{
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+    }
+    .alireview-layout-list__left{
+      background: $color-dark !important;
+    }
+    .alireview-header-summary{
+      .alireview-btn-add-review{
+        &:before{
+          opacity: 0.3;
+        }
+      }
+      .alr-summary{
+        .alr-wrap-count{
+          .alr-count-reviews{
+            li{
+              .alr-sum-wrap{
+                .alr-sum-point{
+                  color: $color-white;
+                }
+              }
+              .alr-count{
+                color: $color-white;
+              }
+            }
+            .alr-progress-bar{
+              background-color: #616161;
+            }
+          }
+        }
+      }
+    }
+    .list-alireview {
+      .alireview-row {
+        .alireview-desc-content{
+          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .alireview-author-content {
+          .alireview-author{
+            color: $color-white;
+          }
+          .alireview-author__avatar {
+            &.ali-verify-buyer{
+              &:hover{
+                &::before{
+                  background: #FFFFFF;
+                  color: #39332E;
+                }
+                &::after{
+                  background: #FFFFFF;
+                }
+              }
+            }
+          }
+
+          .arl-verify{
+            position: relative;
+            margin-left: 5px;
+      
+            &:hover{
+              &::before{
+                background: #FFFFFF;
+                color: #39332E;
+              }
+              &::after{
+                background: #FFFFFF;
+              }
+            }
+          }
+        }
+        .alireview-desc-content, .alireview-desc{
+          .alireview-post{
+            p{
+              color: $color-white;
+            }
+          }
+          .alireview-like-wrap {
+            .alireview-date{
+              color: #C9C9C9;
+            }
+          }
+        }
+      }
+      .alireview-owl-carousel {
+        .owl-nav {
+          [class*=owl-] {
+            i{
+              color: #fff;
+            }
+          }
+        }
+      }
+      .alireview-comment-unlike, .alireview-comment-like{
+        color: #C9C9C9;
+      }
+    }
+    .reviewFormHead{
+      hr{
+        opacity: 0.3;
+      }
+    }
+    .list-review-pagination {
+      .alireview-pagination {
+        li {
+          &.alireview-active {
+            a, span{
+              color: #3A3A3A !important;
+            }
+          }
+        }
+      }
+    }
+    @extend %form-review;
+  }
+}
+
+// popup form review
+.write-review-modal{
+  &.ali-review-theme-dark{
+    @extend %form-review;
+    .alireview-form-title{
+      color: $color-white;
+    }
+    .write-review-dialog {
+      .write-review-content {
+        background: $color-gray-dark;
+        .write-review-header {
+          .button-close {
+            .alireview-fa-time{
+              opacity: 0.2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// popup comment
+.lightbox-modal{
+  &.ali-review-theme-dark{
+    .lightbox-content{
+      background-color: $color-dark;
+      .lc-gallery-image{
+        background-color: $color-dark;
+        border-right: none;
+        border-bottom: 1px solid #2c2c30;
+        .lc-arrow > div i{
+          color: $color-white;
+        }
+        .lc-list-thumbnail{
+          background: linear-gradient(180deg, rgba(51, 51, 51, 0) 0%, #1E1E1E 100%);
+        }
+      }
+      .lc-info{
+        background-color: $color-gray-dark;
+        .lc-author-content {
+          .alireview-author{
+            color: $color-white;
+          }
+        }
+        .lc-desc {
+          p{
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+.#{$prefix}-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.#{$prefix}-tooltip .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    width: 222px;
+    background-color: #fff;
+    box-shadow: 0px 1px 7px rgba(0, 0, 0, 0.2);
+    color: rgb(36, 37, 57);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    padding: 10px 10px;
+    font-weight: 400;
+}
+
+.#{$prefix}-tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.#{$prefix}-tooltip--right {
+    left: calc(100% + 15px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.#{$prefix}-tooltip--right:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+}
+
+.#{$prefix}-tooltip--top {
+    bottom: 125%;
+    left: 50%;
+	transform: translateX(-50%);
+}
+
+.#{$prefix}-tooltip--top:after {
+	content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.#{$prefix}-tooltip--bottom {
+    top: 135%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.#{$prefix}-tooltip--bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgb(52, 76, 103) transparent;
+}
+
+.#{$prefix}-tooltip--left {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    right: calc(100% + 15px);
+}
+
+.#{$prefix}-tooltip--left::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgb(52, 76, 103);
+}

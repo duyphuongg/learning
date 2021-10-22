@@ -1,0 +1,60 @@
+// =========================== //
+//  Project Name: Alireviews   //
+//  Author: PhamThong          //
+//  Version: 1.0.0             //
+//============================ //
+@import "./fontawesome-variables";
+@import "../libs/fontawesome-pro/scss/fontawesome.scss";
+@import "../libs/fontawesome-pro/scss/brands.scss";
+@import "../libs/fontawesome-pro/scss/duotone.scss";
+@import "../libs/fontawesome-pro/scss/light.scss";
+@import "../libs/fontawesome-pro/scss/regular.scss";
+@import "../libs/fontawesome-pro/scss/solid.scss";
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Poppins:300,400,500,600,700');
+// Theme
+
+/* BASE - Base styles, variable, mixins, etc */
+@import "bootstrap";
+@import "themes/dark-ali-theme";
+// @import "bootstrap/variables";
+
+@import "variables";
+
+@import "base/keyframes";
+@import "base/fonts";
+@import "base/styles-color";
+@import "base/mixin";
+@import "base/base";
+
+/* EFF - styles */
+
+/* LAYOUT - styles */
+@import "layouts/style-sidebar";
+
+@import "modules/icon-close";
+
+/* PAGES - styles */
+@import "pages/modal-page";
+@import "components/choose-plan";
+@import "pages/upgrade-version-page";
+@import "pages/choose-plan-page";
+
+//  Modal
+@import "pages/modal/modal_upgrade_pro";
+
+/* LAYOUTS - Component */
+@import "modules/component";
+
+/* LAYOUTS - styles */
+@import "layouts/nav";
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/main-aside";
+@import "layouts/content-wrapper";
+@import "layouts/notification-on-mobile";
+
+
+/* RESPONSIVE - Page layout styles mobile */
+@import "rps/responsive";

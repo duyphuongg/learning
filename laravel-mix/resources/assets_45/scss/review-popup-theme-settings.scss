@@ -1,0 +1,58 @@
+@import "./fontawesome-variables";
+@import "../libs/fontawesome-pro/scss/fontawesome.scss";
+@import "../libs/fontawesome-pro/scss/brands.scss";
+@import "../libs/fontawesome-pro/scss/duotone.scss";
+@import "../libs/fontawesome-pro/scss/light.scss";
+@import "../libs/fontawesome-pro/scss/regular.scss";
+@import "../libs/fontawesome-pro/scss/solid.scss";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Poppins:300,400,500,600,700');
+// Theme
+
+/* BASE - Base styles, variable, mixins, etc */
+@import "bootstrap";
+@import "themes/dark-ali-theme";
+@import "../libs/select2/select2.min.css";
+@import "../libs/bootstrap-colorpicker/bootstrap-colorpicker.min.css";
+
+@import "variables";
+
+@import "base/keyframes";
+@import "base/fonts";
+@import "base/styles-color";
+@import "base/mixin";
+@import "base/base";
+
+/* LAYOUT - styles */
+@import "layouts/style-sidebar";
+
+@import "modules/icon-close";
+@import "modules/component";
+
+/* COMPONENTS - styles */
+@import "components/first-time-to-reviews-pops";
+@import "components/textarea-add-tag";
+@import "components/tooltip";
+@import "components/review-popup--review-on-devices";
+@import "components/confirm-box";
+
+/* PAGES - styles */
+@import "pages/review-popup-theme-settings-page";
+@import "components/choose-plan";
+@import "pages/modal-page";
+
+//  Modal
+@import "pages/modal/modal_upgrade_pro";
+
+/* LAYOUTS - styles */
+@import "layouts/nav";
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/main-aside";
+@import "layouts/content-wrapper";
+@import "layouts/notification-on-mobile";
+@import "layouts/notification-waring";
+
+
+/* RESPONSIVE - Page layout styles mobile */
+@import "rps/responsive";

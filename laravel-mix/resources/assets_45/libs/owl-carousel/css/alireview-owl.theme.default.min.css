@@ -1,6 +1,0 @@
-/**
- * Ali Review Owl Carousel v2.2.0
- * Copyright 2013-2016 David Deutsch
- * Licensed under MIT (https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE)
- */
-.alireview-owl-theme .alireview-owl-dots,.alireview-owl-theme .alireview-owl-nav{text-align:center;-webkit-tap-highlight-color:transparent}.alireview-owl-theme .alireview-owl-nav{position: absolute;top: 0; right: 0;}.alireview-owl-theme .alireview-owl-nav [class*=alireview-owl-]{color:#FFF;font-size:14px;margin:5px;padding:4px 7px;background:#D6D6D6;display:inline-block;cursor:pointer;border-radius:3px}.alireview-owl-theme .alireview-owl-nav [class*=alireview-owl-]:hover{background:#869791;color:#FFF;text-decoration:none}.alireview-owl-theme .alireview-owl-nav .disabled{opacity:.5;cursor:default}.alireview-owl-theme .alireview-owl-nav.disabled+.alireview-owl-dots{margin-top:10px}.alireview-owl-theme .alireview-owl-dots .alireview-owl-dot{display:inline-block;zoom:1}.alireview-owl-theme .alireview-owl-dots .alireview-owl-dot span{width:10px;height:10px;margin:5px 7px;background:#D6D6D6;display:block;-webkit-backface-visibility:visible;transition:opacity .2s ease;border-radius:30px}.alireview-owl-theme .alireview-owl-dots .alireview-owl-dot.active span,.alireview-owl-theme .alireview-owl-dots .alireview-owl-dot:hover span{background:#869791}

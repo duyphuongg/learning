@@ -30,7 +30,7 @@ export default {
     mounted() {
     },
     methods: {
-        sendMessage: function(msg){
+        sendMessage: async function(msg){
             let port = chrome.extension.connect();
             port.postMessage(msg);
         },
@@ -39,7 +39,7 @@ export default {
         }
     },
 }
-</script>p
+</script>
 
 <style>
 #form-request{

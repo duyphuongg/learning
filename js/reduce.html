@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h4>Reduce Example</h4>
-<script>
-    
-    var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
-    /*OUTPUT: { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }*/
-    const countDup = () => names.reduce((acc, curr) => {
-        if(acc[curr]){
-            acc[curr] +=1;
-        }else{
-            acc[curr] =1;
+    <script>
+      var names = ["Alice", "Bob", "Tiff", "Bruce", "Alice"];
+      /*OUTPUT: { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }*/
+      const countDup = () =>
+        names.reduce((acc, curr) => {
+          if (acc[curr]) {
+            acc[curr] += 1;
+          } else {
+            acc[curr] = 1;
+          }
+          return acc;
+        }, {});
+      console.log("countDup", countDup());
+
+      // viết gọn theo toán tử logic
+      const countDup2 = () =>
+        names.reduce((acc, curr) => {
+          acc[curr] = acc[curr] + 1 || 1;
+          return acc;
+        }, {});
+      console.log("countDup2", countDup2());
+
+      var people = [
+        { name: "Alice", age: 21 },
+        { name: "Max", age: 20 },
+        { name: "Jane", age: 20 },
+      ];
+      let groupedPeopleNew = people.reduce((acc, curr) => {
+        console.log(curr);
+        let key = curr.age;
+        if (!acc[key]) {
+          acc[key] = [];
         }
+        acc[key].push(curr);
         return acc;
-    }, {} );
-    console.log('countDup', countDup());
+      }, {});
 
-    // viết gọn theo toán tử logic
-    const countDup2 = () => names.reduce( (acc, curr) => {
-        acc[curr] = acc[curr] + 1 || 1
-        return acc;
-    }, {})
-    console.log('countDup2', countDup2());
-
-    var people = [
-        { name: 'Alice', age: 21 },
-        { name: 'Max', age: 20 },
-        { name: 'Jane', age: 20 }
-    ];
-    /* 
+      console.log(2222222222222222, groupedPeopleNew);
+      /* 
     groupedPeople is:
     { 
         20: [
@@ -44,82 +56,289 @@
     }
     */
 
-    
+      // friends - an array of objects
+      // where object field "books" - list of favorite books
+      var friends = [
+        {
+          name: "Anna",
+          books: ["Bible", "Harry Potter"],
+          age: 21,
+        },
+        {
+          name: "Bob",
+          books: ["War and peace", "Romeo and Juliet"],
+          age: 26,
+        },
+        {
+          name: "Alice",
+          books: ["The Lord of the Rings", "The Shining"],
+          age: 18,
+        },
+      ];
 
-    // friends - an array of objects 
-    // where object field "books" - list of favorite books 
-    var friends = [{
-    name: 'Anna',
-    books: ['Bible', 'Harry Potter'],
-    age: 21
-    }, {
-    name: 'Bob',
-    books: ['War and peace', 'Romeo and Juliet'],
-    age: 26
-    }, {
-    name: 'Alice',
-    books: ['The Lord of the Rings', 'The Shining'],
-    age: 18
-    }];
+      // allbooks - list which will contain all friends' books +
+      // additional list contained in initialValue
+      var allbooks = friends.reduce(
+        function (accumulator, currentValue) {
+          return [...accumulator, ...currentValue.books];
+        },
+        ["Alphabet"]
+      );
+      console.log("group -> allbooks", allbooks);
 
-    // allbooks - list which will contain all friends' books +  
-    // additional list contained in initialValue
-    var allbooks = friends.reduce(function(accumulator, currentValue) {
-    return [...accumulator, ...currentValue.books];
-    }, ['Alphabet']);
-    console.log("group -> allbooks", allbooks)
+      // allbooks = [
+      //   'Alphabet', 'Bible', 'Harry Potter', 'War and peace',
+      //   'Romeo and Juliet', 'The Lord of the Rings',
+      //   'The Shining'
+      // ]
 
+      let arr = [1, 2, 1, 2, 3, 5, 4, 5, 3, 4, 4, 4, 4];
+      let result = () =>
+        arr.reduce((acc, curr, index, arr) => {
+          if (arr.indexOf(curr) == index) {
+            acc.push(curr);
+          }
+          return acc;
+        }, []);
+      console.log(result()); //[1,2,3,4,5]
 
-    // allbooks = [
-    //   'Alphabet', 'Bible', 'Harry Potter', 'War and peace', 
-    //   'Romeo and Juliet', 'The Lord of the Rings',
-    //   'The Shining'
-    // ]
+      /* output: [0, 1, 2, 3, 4, 5]*/
+      let input = [
+        [0, 1],
+        [2, 3],
+        [4, 5],
+      ];
+      let output = input.reduce((acc, curr) => {
+        return acc.concat(curr);
+      }, []);
+      let output2 = input.reduce((acc, curr) => {
+        return [...acc, ...curr];
+      }, []);
+      console.log("output", output);
+      console.log("output2", output2);
 
+      /*INPUT*/
+      const topics = [
+        {
+          topic: "ReactJS",
+          posts: [
+            { postID: "id1", title: "title1" },
+            { postID: "id2", title: "title2" },
+          ],
+        },
+        {
+          topic: "Vue.js",
+          posts: [
+            { postID: "id3", title: "title3" },
+            { postID: "id4", title: "title4" },
+          ],
+        },
+      ];
+      /*OUTPUT*/
+      let listPost = topics.reduce((acc, curr) => {
+        return [...acc, ...curr.posts];
+      }, []);
+      console.log("listPost", listPost);
 
-    let arr = [1, 2, 1, 2, 3, 5, 4, 5, 3, 4, 4, 4, 4];
-    let result = () => arr.reduce((acc, curr, index, arr) => {
-        if(arr.indexOf(curr) == index){
-            acc.push(curr)
-        } 
-        return acc;
-    },[])
-    console.log(result()); //[1,2,3,4,5]
+      //Lấy ra title của id ngẫu nhiên từ listPost
 
-    /* output: [0, 1, 2, 3, 4, 5]*/
-    let input = [[0, 1], [2, 3], [4, 5]];
-    let output = input.reduce((acc, curr) => {
-        return acc.concat(curr)
-    }, [])
-    let output2 = input.reduce( (acc, curr) => {
-        return [...acc, ...curr]
-    }, [])
-    console.log('output', output);
-    console.log('output2', output2);
+      console.log("title", group(listPost, "postID"));
 
-    /*INPUT*/
-    const topics = [
-    {
-        topic: "ReactJS",
-        posts: [{ postID: "id1", title: "title1" }, { postID: "id2", title: "title2" }]
-    },
-    {
-        topic: "Vue.js",
-        posts: [{ postID: "id3", title: "title3" }, { postID: "id4", title: "title4" }]
-    }
-    ];
-    /*OUTPUT*/
-    let listPost = topics.reduce( (acc, curr) => {
-        return [...acc, ...curr.posts]
-    }, [])
-    console.log('listPost', listPost);
+      let arTopic = [
+        {
+          id: 1,
+          title: "Make your customers curious",
+          templates: [
+            {
+              id: 1,
+              title: "Template 1",
+              subject:
+                "[#!buyer_full_name!#], We need to talk about your recent order...",
+              preview: "Have we forgetten something to be done?",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>You've just made the order of [#!order_id!#] recently, remember? We're interested in hearing about your experience. <br/><br/>Are you satisfied with this order and the service you've received so far? Don't hesitate to tell us what you're thinking by leaving a review in the Box!",
+            },
+            {
+              id: 2,
+              title: "Template 2",
+              subject:
+                "OMG! Who can make our day better than you, [#!buyer_full_name!#]?",
+              preview: "We saw what you have done to us...",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>Thank you for choosing us. You've been so good at giving us reviews that it's become a great resources of inspiration for us to keep expanding and delivering the best serivces possible. <br/><br/>Is everything still fine with you or do we have something missing? Would you mind sharing your recent order experiences by filling out this Review Box. We're exicted to hear it!",
+            },
+            {
+              id: 3,
+              title: "Template 3",
+              subject:
+                "[#!buyer_full_name!#], is it a mistake if we added this to your order...",
+              preview: "When nothing goes right then we should go left?...",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>Your latest [#!order_id!#] has just arrived safely at your doorstep, and we are wondering how your experience was. <br/><br/>It would be helpful if you take a moment to leave us your reviews. Share your thoughts in the Review Box!",
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: "Gently asking for reviews",
+          templates: [
+            {
+              id: 1,
+              title: "Template 1",
+              subject: "[#!buyer_full_name!#], show them what you've got.",
+              preview:
+                "Our community is so excited to see what you're gonna share...",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>Your latest [#!order_id!#] has already flied to your hand, and we just wanna check if everything is alright.<br/><br/>How was your experience? Please take a moment to share your thoughts in the Review Box! This will help us improve our service possible onwards.",
+            },
+            {
+              id: 2,
+              title: "Template 2",
+              subject:
+                "[#!buyer_full_name!#], Seriously, you have a great taste!",
+              preview: "Don't forget to show who you are before you head out",
+              content:
+                "Dear [#!buyer_full_name!#],<br/>Thank you for choosing [#!shop_name!#]!<br/><br/>We're just checking in to make sure that you received your product and everything is perfect. If you've enjoyed the product so far, we’d love to hear your experience.<br/>Write a review to help other customers like you find us!",
+            },
+            {
+              id: 3,
+              title: "Template 3",
+              subject:
+                "[#!buyer_full_name!#], Hello, have you ever tried to be a writer?",
+              preview:
+                "You definitely didn't choose to be a writer, did you? But the writing life chose you!",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>Your latest [#!order_id!#] has already been delivered to your home, and we're curious about your experience. Are you satisfied with it?<br/><br/>Share your genuine thoughts in the Review Box to assist us in obtaining justice! This will help others like you evaluate whether or not our service is satisfactory.",
+            },
+            {
+              id: 4,
+              title: "Template 4",
+              subject: "[#!buyer_full_name!#], What has just arrived?",
+              preview: "Are you smiling? You're totally smiling!",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>Your favourite order has just arrived to your doorstep. We're just checking if everything is perfect and you're happy with our product. <br/><br/>Kindly share your thoughts with us by leaving a comment in the Review Box. We're thrilled to hear what's on your mind so that we can continue improving your purchasing experience the next time.",
+            },
+            {
+              id: 5,
+              title: "Template 5",
+              subject:
+                "[#!buyer_full_name!#], Here it comes, your order is on its way!",
+              preview:
+                "We are just as excited as you are, the favorite handpicked is coming...",
+              content:
+                "Thanks for choosing [#!shop_name!#]! Hope you enjoyed shopping with us!<br/><br/>Please share your thoughts with us by leaving a comment in the box below. We're eager to hear what's on your mind so that we can improve your shopping experience the next time you visit.",
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: "Message of trustful appreciation",
+          templates: [
+            {
+              id: 1,
+              title: "Template 1",
+              subject:
+                "Hello [#!buyer_full_name!#], Thanks for choosing us out of thousands of stores out there!",
+              preview:
+                "We're are making cookies to celebrate our relationship :)",
+              content:
+                "Hello [#!buyer_full_name!#],<br/>We'd like to express our gratitude for choosing our [#!order_id!#].<br/>Online reviews are extremely important to businesses like ours in today's digital world.<br/><br/>Will you please take a moment to provide feedback in our Review Box or by clicking here? It's a simple way for you to make a difference.",
+            },
+            {
+              id: 2,
+              title: "Template 2",
+              subject: "[#!buyer_full_name!#], Thanks for dropping by!",
+              preview: "The day you came was the best day of my life",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>We'd like to express our appreciate for your choosing our [#!order_id!#].<br/>In today's digital world, online reviews are very important to companies like ours. <br/><br/>Will you take a moment to jot down some feedback on our Review Box or by clicking here? It's a quick and easy way for you to make a difference.",
+            },
+            {
+              id: 3,
+              title: "Template 3",
+              subject:
+                "[#!buyer_full_name!#], Thank you from the bottom of our heart!",
+              preview:
+                "I only love you when you made an order from our store :)",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>We'd want to show our thanks to you for purchasing our [#!order_id!#].<br/>Online reviews are extremely beneficial for companies like ours in today's digital world.<br/><br/>Will you take a second to provide feedback in our Review Box or by clicking here? It's a simple but effective way for you to make a difference.",
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: "Add senses of urgency",
+          templates: [
+            {
+              id: 1,
+              title: "Template 1",
+              subject:
+                "Help needed: Your valuable feedback could aid us fight against the scammers.",
+              preview: "Your feedback matters",
+              content:
+                "Hi [#!buyer_full_name!#],<br/><br/>We truly think that your reviews are the most accurate reflection of our customer service and the product quality.<br/><br/>Would you kindly share your minds on your recent orders in the Review Box below? This can help us overcome the negative reviews left by anonymous recently.",
+            },
+            {
+              id: 2,
+              title: "Template 2",
+              subject:
+                "[#!buyer_full_name!#], You're the only one to know the truth that other don't...",
+              preview:
+                "Will you share that truth to the whole world or only keep in your mind?",
+              content:
+                "Hi [#!buyer_full_name!#],<br/><br/>We believe that your reviews are the most accurate reflection of our customer service and the product quality, which can help us overcome the negative reviews left by anonymous. <br/><br/>Would you mind sharing your thoughts on your recent orders in the Review Box below, this also will help other customers get more appropriate information about our products.",
+            },
+            {
+              id: 3,
+              title: "Template 3",
+              subject:
+                "An anonymous criticised we were bad. We weren't. We urgently need your help.",
+              preview:
+                '"I didn\'t realize this shirt could be that worst" 4.75 stars- 298 reviews',
+              content:
+                "Hi [#!buyer_full_name!#],<br/>Some anonymous said negative feedback about our products. But we believe that we can gain our justice back and provide other customers with appropriate information about our products thanks to your meaningful reviews. <br/><br/>Please help us share your truly feedback in the Review Box.",
+            },
+          ],
+        },
+        {
+          id: 5,
+          title: "Incentive motivation",
+          templates: [
+            {
+              id: 1,
+              title: "Template 1",
+              subject: "[#!buyer_full_name!#], [#!discount!#]. This week only!",
+              preview: "Don't you miss it out! Once in a lifetime chance...",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>We're happy to be your choice. As a huge thank you, we're got a special offer of [#!discount!#] just for you. Please kindly share your feedback on your recent order and use the coupon sent to you after the review is submitted.<br/><br/>The discount code is valid until end of this month. Hope you'll enjoy it!",
+            },
+            {
+              id: 2,
+              title: "Template 2",
+              subject:
+                "[#!buyer_full_name!#] Limited time offer: get [#!discount!#]!",
+              preview: "We've got a gift for you!",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>Thank you for choosing our product!<br/>We're thrilled to offer you a special discount on every product in store. Please kindly share your feedback on your recent order to activate your [#!discount!#]. The code will be sent to you after the review is submitted in the Review Box or by clicking here.",
+            },
+            {
+              id: 3,
+              title: "Template 3",
+              subject:
+                "[#!buyer_full_name!#] Limited-offer! Get [#!discount!#] on your favorite items.",
+              preview: "Hurry! Only made for you, shop personlized favourites!",
+              content:
+                "Hi [#!buyer_full_name!#],<br/>Now you can get your favorite products for [#!discount!#]. Simply use the discount code given to you when you kindly share your thoughtful reviews on the recent order.<br/>The discount code is valid until end of this month. Hope you'll enjoy it!",
+            },
+          ],
+        },
+      ];
 
-    //Lấy ra title của id ngẫu nhiên từ listPost
-   
-    console.log('title', group(listPost, 'postID'));
+      let curr_topic = 3;
+      let curr_template = 2;
 
-    
-    
-</script>
-</body>
+      let topic_default = arTopic.reduce((arr, curr) => {
+        if(arr)
+      }, {})
+    </script>
+  </body>
 </html>

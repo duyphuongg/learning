@@ -41,6 +41,18 @@
     />
     <img src="" data-src="https://wallpaperaccess.com/full/224784.jpg" />
     <script>
+      //Detect When Users Switch Tabs using JavaScript
+      document.addEventListener("visibilitychange", () => {
+        document.title = document.visibilityState;
+      });
+
+      // window.addEventListener("blur", () => {
+      //   document.title = "blur";
+      // });
+
+      // window.addEventListener("focus", () => {
+      //   document.title = "focus";
+      // });
       if (!!window.IntersectionObserver) {
         let observer = new IntersectionObserver(
           (entries, observer) => {

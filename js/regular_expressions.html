@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h2>JavaScript Regular Expressions</h2>
+  </head>
+  <body>
     <script>
-        /*
-        /pattern/modifiers; 
+      /*
+        có 2 cách tạo : 
+        new RegExp(pattern[, flags])
+        hoặc
+        /pattern/flags; 
+        // Cách 1:
+        const regex = /^abc$/gi;
+        // Cách 2:
+        const regex2 = new RegExp('^abc$', 'gi');
+        
         modifiers : 
             i : không phân biệt hoa thường
             g : tìm toàn chuỗi, k dừng lại ở phần tử đầu tiên
             m: tìm trên nhiều dòng
 
         pattern: 
-            [abc] : tìm tất cả kí tự giữa dấu ngoặc
+            [abc] : tìm tất cả kí tự giữa dấu ngoặc [a-c]
             [0-9] : tìm tất cả số giữa ngoặc
             (x|y) : tìm các từ đc phân cách |
             \d : tìm 1 chữ số
@@ -26,14 +33,42 @@
             n+ : khớp với bất kì chuổi nào chứa ít nhất 1 n
             n* : 
         */
-        var str = "Use a Microsoft case \n insensitive regular expression to replace Microsoft with W3Schools in a 1 2 5string";
-        let ex_replace = str.replace(/microsoft/ig, 'Phuong')
-        console.log("ex_replace", ex_replace)
-        let ex_search = str.search(/microsoft/ig)
-        console.log("ex_search", ex_search)
+      // var str = "Use a Microsoft case \n insensitive regular expression to replace Microsoft with W3Schools in a 1 2 5string";
+      // let ex_replace = str.replace(/microsoft/ig, 'Phuong')
+      // console.log("ex_replace", ex_replace)
+      // let ex_search = str.search(/microsoft/ig)
+      // console.log("ex_search", ex_search)
+      // let regex = /mi/ig
+      // let ex_math = str.match(regex)
+      // console.log("ex_math", ex_math)
 
-        let ex_math = str.match(/microsoft/ig)
-        console.log("ex_math", ex_math)
+      // var re = /quick\s(brown).+?(jumps)/gi;
+      // var str = "The Quick Brown Fox dadasd dsad Jumps Over The Lazy Dog.";
+      // var res = re.exec(str);
+      // console.log(res);
+      let max_length = 30
+      let text = '';
+      let str = ' das dsa dsad ds dasd dsa das on {reviews} da'
+      const regex = /\{(.*?)\}/g;
+      const tag_match = str.match(regex)
+      const tag_search = str.search(regex)
+      console.log("🚀 ~ file: regular_expressions.html:52 ~ ex_search", tag_match, tag_search, str.length)
+
+      if(tag_match){
+        let tag_length = tag_match[0].length
+        const max_length_has_tag = max_length + tag_length - 5
+        console.log("lenght", tag_search, max_length_has_tag, (tag_search  < max_length_has_tag && tag_search > max_length - 5));
+        if(tag_search  < max_length_has_tag && tag_search > max_length - 5){
+          console.log("case 1");
+          text = str.length > max_length_has_tag ? str.slice(0, max_length_has_tag - tag_length) : str;
+        }else{
+          text = str.length > max_length_has_tag ? str.slice(0, max_length_has_tag) : str;
+        }
+      }else{
+          text = str.length > max_length ? str.slice(0, max_length) : str;
+      }
+      
+      console.log(2222, text, text.length);
     </script>
-</body>
+  </body>
 </html>

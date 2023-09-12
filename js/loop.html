@@ -8,31 +8,56 @@
 <body>
     <h1>Loop</h1>
     <script>
-        let arr = ['BMW', 'Volvo', 'Mini'];
-        let obj = {fname:"John", lname:"Doe", age:25};
-        /* for/in : i is index
-        */
-        for(let i in arr){
-            console.log('for/in', i)
-        }
-
-        for(let i in obj){
-            console.log('for/in', i);
-        }
-
-        /*
-        for/of : i is value
-        */
-        for(let i of arr){
-            console.log('for/of',i);
-        }
-        // for(let i of obj){
-        //     console.log('for/of',i);
+        // let arr = ['BMW', 'Volvo', 'Mini'];
+        // let obj = {fname:"John", lname:"Doe", age:25};
+        // /* for/in : i is index
+        // */
+        // for(let i in arr){
+        //     console.log('for/in', i)
         // }
 
-        let foreach =  arr.forEach((element, index) => {
-            console.log('forEach', element, index);
-        });
+        let test = {
+            "057c5d65-6bca-4bac-85e9-15bb8aacde86": {
+                "is_block": false,
+                "is_importing": false
+            },
+            "1ae56fe4-df32-4861-9a55-1e4bb49d1ea2": {
+                "is_block": false,
+                "is_importing": false
+            },
+            "4f1fa9fe-7e92-4a6c-820f-a0df4feff72f": {
+                "is_block": false,
+                "is_importing": false
+            },
+            "655f3293-3d2f-4dcc-9fd3-f0a98fa0bf8f": {
+                "is_block": false,
+                "is_importing": false
+            }
+        }
+        let list = []
+        for(let i in test){
+            console.log('for/in', i, test[i]);
+            
+        }
+        // console.log("🚀 ~ file: loop.html:38 ~ test2", test2)
+
+        // for(let i in obj){
+        //     console.log('for/in', i);
+        // }
+
+        // /*
+        // for/of : i is value
+        // */
+        // for(let i of arr){
+        //     console.log('for/of',i);
+        // }
+        // // for(let i of obj){
+        // //     console.log('for/of',i);
+        // // }
+
+        // let foreach =  arr.forEach((element, index) => {
+        //     console.log('forEach', element, index);
+        // });
 
         //break/continue : break : dừng vòng lặp nếu thỏa điều kiện, continue: bỏ qua giá trị thỏa điều kiện và tiếp tục loop
         // for(let i = 0; i<10; i++){
@@ -40,10 +65,10 @@
         //     document.write(i+'<br>');
         // }
 
-        for(let i = 0; i<10; i++){
-            if(i == 5) continue;
-            document.write(i+'<br>');
-        }
+        // for(let i = 0; i<10; i++){
+        //     if(i == 5) continue;
+        //     document.write(i+'<br>');
+        // }
 
     </script>
 </body>

@@ -8,23 +8,87 @@
   <body>
     <div class="loader"></div>
     <script>
-      function move(array, index, delta) {
-        var newIndex = index + delta;
-        if (newIndex < 0 || newIndex == array.length) return; //Already at the top or bottom.
-        var indexes = [index, newIndex].sort(); //Sort the indixes
-        array.splice(indexes[0], 2, array[indexes[1]], array[indexes[0]]); //Replace from lowest index, two elements, reverting the order
-      }
+      // function move(array, index, delta) {
+      //   var newIndex = index + delta;
+      //   if (newIndex < 0 || newIndex == array.length) return; //Already at the top or bottom.
+      //   var indexes = [index, newIndex].sort(); //Sort the indixes
+      //   array.splice(indexes[0], 2, array[indexes[1]], array[indexes[0]]); //Replace from lowest index, two elements, reverting the order
+      // }
 
-      function moveDown(array, index) {
-        move(array, index, 1);
-      }
+      // function moveDown(array, index) {
+      //   move(array, index, 1);
+      // }
 
-      let indexReviewPops = arr.findIndex(
-        (item) => item.is_widget && item.widget_type == "review_pop"
-      );
-      console.log(111, indexReviewPops);
-      moveDown(arr, indexReviewPops);
-      console.log(22222, arr);
+      // let indexReviewPops = arr.findIndex(
+      //   (item) => item.is_widget && item.widget_type == "review_pop"
+      // );
+      // console.log(111, indexReviewPops);
+      // moveDown(arr, indexReviewPops);
+      // console.log(22222, arr);
+      // function plusMinus(arr) {
+      //   // Write your code here
+      //   const length = arr.length;
+      //   const positiveArr = arr.filter((i) => i > 0);
+      //   const negativeArr = arr.filter((i) => i == 0);
+      //   const zeroArr = arr.filter((i) => i < 0);
+      //   return `${positiveArr.length/length}\n${negativeArr.length/length}\n${zeroArr.length/length}`;
+      // }
+      // const arr = [-4, 3, -9, 0, 4, 1]
+      // console.log(plusMinus(arr));
+      // const n = 6;
+      
+      // function staircase(n) {
+      //     // Write your code here
+      //   var arr = [];
+      //   for(let i = 1; i <= n; i++){
+      //     arr[i] = []
+      //     for(let j = n; j >= 1; j--){
+      //       if(i >= j){
+      //         arr[i].push("#")
+      //       }else{
+      //         arr[i].push(" ")
+      //       }
+      //     }
+      //   }
+      //   arr.map(i => console.log(i.join("")))
+      // }
+      // staircase(n)
+
+      // function miniMaxSum(arr) {
+      //   // Write your code here
+      //   const sortArr = arr.sort((a,b) => a - b)
+      //   const lengthSum = arr.length - 1
+      //   const minArr = arr.slice(0, lengthSum);
+      //   const maxArr = arr.slice(-lengthSum);
+      //   const sum = (arrSum) => arrSum.reduce((a, b) => a+b, 0)
+      //   console.log(`${sum(minArr)} ${sum(maxArr)}`);
+      // }
+      // const arr = [3, 4, 5, 1, 2, 5]
+      // function birthdayCakeCandles(candles) {
+      //     // Write your code here
+      //   const max = Math.max(...candles)
+      //   let countMax = 0
+      //   for(let i = 0; i< candles.length; i++){
+      //     if(candles[i] == max){
+      //       countMax++
+      //     }
+      //   }
+      //   return countMax
+      // }
+      // console.log(birthdayCakeCandles(arr));
+      // const s = `07:05:45PM`
+      // function timeConversion(s) {
+      //   // Write your code here
+      //   const timeString = s.slice(-2)
+      //   const hour = s.slice(0, 2)
+      //   if(timeString == "AM"){
+          
+      //   }else{
+
+      //   }
+      // }
+      // console.log(timeConversion(s));
     </script>
+    <script src="./shopify.js"></script>
   </body>
 </html>

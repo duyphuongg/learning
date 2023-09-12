@@ -6,7 +6,220 @@
     <title>Document</title>
   </head>
   <body>
+    <h4 id="text">1</h4>
+    <button id="clear">Clear</button>
     <script>
+      const a = [
+        [11,2,4],
+        [4,5,6],
+        [10,8,-12],
+      ]
+
+      const b = () => {
+        
+      }
+      // const data = [
+      //   {
+      //     id: "product_translate",
+      //     target_resource: false,
+      //     prices: [
+      //       {
+      //         quantity: 1000,
+      //         price: 8.9,
+      //       },
+      //       {
+      //         quantity: 5000,
+      //         price: 43.9,
+      //       },
+      //       {
+      //         quantity: 10000,
+      //         price: 79.9,
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     id: "glossary",
+      //     target_resource: false,
+      //     prices: [
+      //       {
+      //         quantity: 250,
+      //         price: 4.9,
+      //       },
+      //       {
+      //         quantity: 500,
+      //         price: 8.9,
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     id: "auto_translate",
+      //     target_resource: false,
+      //     prices: [
+      //       {
+      //         quantity: 100,
+      //         price: 2,
+      //       },
+      //       {
+      //         quantity: 250,
+      //         price: 4.5,
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     id: "replace_image",
+      //     target_resource: false,
+      //     prices: [
+      //       {
+      //         quantity: 100,
+      //         price: 2,
+      //       },
+      //     ],
+      //   },
+      // ];
+
+      // const format = data.reduce((acc, curr) => {
+      //   console.log(curr);
+      //   let key = curr.id;
+      //   if (!acc[key]) {
+      //     acc[key] = [];
+      //   }
+      //   acc[key].push(curr.prices);
+      //   return acc;
+      // }, {})
+      // console.log("🚀 ~ file: regular_expressions.html:80 ~ format ~ format:", format)
+
+      // const res = {
+      //   product_translate: [
+      //     {
+      //       quantity: 1000,
+      //       price: 8.9,
+      //     },
+      //     {
+      //       quantity: 5000,
+      //       price: 43.9,
+      //     },
+      //     {
+      //       quantity: 10000,
+      //       price: 79.9,
+      //     },
+      //   ],
+      //   replace_image: [
+      //     {
+      //       quantity: 100,
+      //       price: 2,
+      //     },
+      //   ],
+      //   auto_translate: [
+      //     {
+      //       quantity: 100,
+      //       price: 2,
+      //     },
+      //     {
+      //       quantity: 250,
+      //       price: 4.5,
+      //     },
+      //   ],
+      //   glossary: [
+      //     {
+      //       quantity: 250,
+      //       price: 4.9,
+      //     },
+      //     {
+      //       quantity: 500,
+      //       price: 8.9,
+      //     },
+      //   ],
+      // };
+      // const button = document.querySelector("#clear");
+      // const text = document.querySelector("#text");
+      // let timer = null;
+      // let test = {};
+      // test["1"] = null;
+      // test["2"] = null;
+      // console.log(test);
+      // button.addEventListener("click", function () {
+      //   clearTimeout(test["1"]);
+      //   clearInterval(test["1"]);
+      // });
+
+      // test["1"] = setInterval(function () {
+      //   console.log("run", test);
+      //   const oldText = text.innerHTML;
+      //   const newText = +oldText + 1;
+      //   text.innerHTML = newText;
+      // }, 1000);
+
+      // function fakePercent(n) {
+      //   let percent = 0;
+      //   let interval = 5000; // 5 seconds
+
+      //   function setTimeWithRule() {
+      //     if (n >= 0 && n <= 500) {
+      //       interval = 500; // 0.5 seconds per percent
+      //     } else if (n <= 1000) {
+      //       interval = 700; // 0.7 seconds per percent
+      //     } else if (n <= 5000) {
+      //       interval = 1000; // 1 second per percent
+      //     } else if (n <= 10000) {
+      //       interval = 1500; // 1.5 seconds per percent
+      //     } else {
+      //       interval = 5000; // 5 seconds per percent
+      //     }
+      //   }
+      //   function runWithRule() {
+      //     test["1"] = setInterval(() => {
+      //       percent++;
+      //       console.log("Percent: 2", percent);
+      //       console.log(222222, test);
+      //       if (percent > 99) {
+      //         clearInterval(test["1"]);
+      //       }
+      //     }, interval);
+      //   }
+
+      //   test["1"] = setTimeout(() => {
+      //     console.log("interval 1", interval);
+      //     console.log(111111, test);
+      //     clearTimeout(test["1"]);
+      //     setTimeWithRule();
+      //     runWithRule();
+      //     let randomPercent = Math.floor(Math.random() * 6); // Random number from 0 to 5
+      //     console.log("Percent: 1", randomPercent);
+      //     percent = randomPercent;
+      //   }, interval);
+      // }
+      // fakePercent(100, test["1"]);
+
+      // Input string with HTML entities
+      // var inputString = "Rel&oacute;gio agrad&aacute;vel, mas a pulseira DAA &eacute; muito r&iacute;gida e prensas. Os cantos s&atilde;o angulares e afiados. Apar&ecirc;ncia Super mas para us&a";
+
+      // // Regular expression to match HTML entities
+      // var entityRegex = /&(\w+);/g;
+
+      // // Function to replace HTML entities with Unicode characters
+      // function replaceEntity(match, entity) {
+      //   var entityMap = {
+      //     amp: "&",
+      //     lt: "<",
+      //     gt: ">",
+      //     quot: '"',
+      //     apos: "'",
+      //     nbsp: " ",
+      //     // Add more entity mappings as needed
+      //     oacute: "ó",
+      //     aacute: "á",
+      //     // Add more entity mappings as needed
+      //   };
+
+      //   return entityMap[entity] || match;
+      // }
+
+      // // Replace HTML entities with Unicode characters
+      // var unicodeString = inputString.replace(entityRegex, replaceEntity);
+
+      // // Output the Unicode string
+      // console.log(unicodeString);
+
       /*
         có 2 cách tạo : 
         new RegExp(pattern[, flags])
@@ -46,29 +259,114 @@
       // var str = "The Quick Brown Fox dadasd dsad Jumps Over The Lazy Dog.";
       // var res = re.exec(str);
       // console.log(res);
-      let max_length = 30
-      let text = '';
-      let str = ' das dsa dsad ds dasd dsa das on {reviews} da'
-      const regex = /\{(.*?)\}/g;
-      const tag_match = str.match(regex)
-      const tag_search = str.search(regex)
-      console.log("🚀 ~ file: regular_expressions.html:52 ~ ex_search", tag_match, tag_search, str.length)
+      // const max = 10
+      // let page = 1
+      // for(let i = page; i < max; i++){
+      //   page = i
+      //   console.log(i, page);
+      //   if(i == 7){
+      //     break
+      //   }
+      // }
+      // console.log("End", page);
+      // const shop_id = 59119403108,
+      //   product_id = 7194119405668,
+      //   import_id = "79163a14-f282-4b2a-917e-763c7dd6106f";
+      // const currentData = [
+      //   {
+      //     expiry: 1683615490772,
+      //     import_id: "dbd03a85-09f7-4efd-81ad-c4c9365a23c1",
+      //     product_id: 7194119438436,
+      //     shop_id: 59119403108,
+      //     time: "5/9/2023, 1:58:10 PM",
+      //   },
+      //   {
+      //     shop_id: 59119403108,
+      //     product_id: 7194119405668,
+      //     import_id: "79163a14-f282-4b2a-917e-763c7dd6106f",
+      //     expiry: 1683618513928,
+      //   },
+      // ];
+      // const now = new Date();
+      // //Xóa import_id đã hết hạn, hoặc đã chạy xong flow
+      // const filterExpiry = currentData.filter(
+      //   (item) => now.getTime() < item.expiry
+      // );
+      // console.log(
+      //   "🚀 ~ file: regular_expressions.html:79 ~ filterExpiry:",
+      //   filterExpiry
+      // );
+      // const nextData = filterExpiry.filter(
+      //   (item) =>
+      //     !(
+      //       item.shop_id === shop_id &&
+      //       item.product_id === product_id &&
+      //       item.import_id === import_id
+      //     )
+      // );
 
-      if(tag_match){
-        let tag_length = tag_match[0].length
-        const max_length_has_tag = max_length + tag_length - 5
-        console.log("lenght", tag_search, max_length_has_tag, (tag_search  < max_length_has_tag && tag_search > max_length - 5));
-        if(tag_search  < max_length_has_tag && tag_search > max_length - 5){
-          console.log("case 1");
-          text = str.length > max_length_has_tag ? str.slice(0, max_length_has_tag - tag_length) : str;
-        }else{
-          text = str.length > max_length_has_tag ? str.slice(0, max_length_has_tag) : str;
-        }
-      }else{
-          text = str.length > max_length ? str.slice(0, max_length) : str;
-      }
-      
-      console.log(2222, text, text.length);
+      // function randomNumberRange(min, max) {
+      //   return Math.floor(Math.random() * (max - min + 1)) + min;
+      // }
+
+      // function fakePercent(n) {
+      //   let percent = 0;
+      //   let maxPercent = 5;
+      //   let interval = 5000; // 5 seconds
+      //   let timer;
+
+      //   // Function to update the percent
+      //   function updatePercent() {
+      //     if (percent >= maxPercent) {
+      //       clearInterval(timer);
+      //       runWithRule();
+      //       return;
+      //     }
+
+      //     console.log("Percent:", percent);
+      //     percent++;
+      //   }
+
+      //   // Function to run with the specified rule
+      //   function runWithRule() {
+      //     if (n >= 0 && n <= 500) {
+      //       interval = 500; // 0.5 seconds per percent
+      //     } else if (n <= 1000) {
+      //       interval = 700; // 0.7 seconds per percent
+      //     } else if (n <= 5000) {
+      //       interval = 1000; // 1 second per percent
+      //     } else if (n <= 10000) {
+      //       interval = 1500; // 1.5 seconds per percent
+      //     } else {
+      //       interval = 5000; // 5 seconds per percent
+      //     }
+
+      //     timer = setInterval(() => {
+      //       console.log("Percent:", percent);
+      //       percent++;
+
+      //       if (percent > 100) {
+      //         clearInterval(timer);
+      //         console.log("Process completed!");
+      //       }
+      //     }, interval);
+      //   }
+
+      //   // Run with random percentage for the first 5 seconds
+      //   timer = setInterval(() => {
+      //     if (percent >= maxPercent) {
+      //       clearInterval(timer);
+      //       runWithRule();
+      //       return;
+      //     }
+
+      //     console.log("Percent:", percent);
+      //     percent++;
+      //   }, interval);
+      // }
+
+      // // Gọi hàm với thời gian tiến trình chạy xong là 10 giây
+      // fakePercent(100);
     </script>
   </body>
 </html>

@@ -126,6 +126,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       {
         from: path.resolve(__dirname, '../template/background.js'),
         to: path.resolve(__dirname, '../dist/background.js'),
+      },
+      {
+        from: path.resolve(__dirname, '../template/app.js'),
+        to: path.resolve(__dirname, '../dist/app.js'),
       }
     ])
   ]

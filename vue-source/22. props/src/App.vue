@@ -1,0 +1,43 @@
+<template>
+    <div>
+        <app-header v-bind:title="title"></app-header>
+        <app-ninjas v-bind:ninjas="ninjas"></app-ninjas>
+        <app-footer v-bind:copyright="copyright"></app-footer>
+    </div>
+</template>
+
+<script>
+// Imports
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import Ninjas from './components/Ninjas.vue';
+
+export default {
+    components: {
+        'app-header': Header,
+        'app-footer': Footer,
+        'app-ninjas': Ninjas
+    },
+    data () {
+        return {
+          ninjas: [
+              {name: 'Ryu', speciality: 'Vue Components', show: false},
+              {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
+              {name: 'Hitoshi', speciality: 'Click Events', show: false},
+              {name: 'Tango', speciality: 'Conditionals', show: false},
+              {name: 'Kami', speciality: 'Webpack', show: false},
+              {name: 'Yoshi', speciality: 'Data Diggin', show: false}
+          ],
+          copyright: 'Copyright 2017 Vue Ninjas',
+          title: 'Vue Ninjas'
+        }
+    }
+}
+</script>
+
+<style>
+body{
+    margin: 0;
+    font-family: 'Nunito SemiBold';
+}
+</style>

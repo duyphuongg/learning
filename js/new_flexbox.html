@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex-box {
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+        flex-wrap: wrap;
+        height: 100vh;
+      }
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        background: wheat;
+        border: 1px solid;
+        flex-basis: 200px;
+      }
+      .flex-top {
+        display: flex;
+        width: 100vw;
+        justify-content: space-between;
+      }
+      .flex-bot {
+        display: flex;
+        width: 100vw;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-box">
+      <div class="flex-top">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+      </div>
+      <div class="flex-bot">
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+      </div>
+    </div>
+    <script>
+       /**
+        * Example: 
+        * var arrays = [
+        *    ["1", "2", "3"],
+        *    [true],
+        *    [4, 5, 6]
+        *  ];
+        * 
+        * flatten(arrays) // ["1", "2", "3", true, 4, 5, 6];
+        */
+         var arrays = [
+            ["1", "2", "3"],
+            [true],
+            [4, 5, 6],
+            "acv"
+          ];
+       const res = arrays.reduce((acc, curr) => {
+        if(typeof curr === "object"){
+          acc = [...curr, ...acc]
+        }else{
+          acc = [...acc, curr]
+        }
+        return acc
+       }, [])
+       console.log("🚀 ~ file: new_flexbox.html:73 ~ res ~ res:", res)
+    </script>
+  </body>
+</html>

@@ -7,21 +7,28 @@
 </head>
 <body>
     <script>
-        console.log("filterReview -> dateTo", new Date("2020/06/17"))
-        console.log("filterReview -> dateTo", new Date("2020-06-17"))
-        let date = new Date("2020/06/17")
-        date.setHours(23)
-        date.setMinutes(59)
-        date.setSeconds(59)
-        console.log("date", date)
+        // console.log("filterReview -> dateTo", new Date("2020/06/17"))
+        // console.log("filterReview -> dateTo", new Date("2020-06-17"))
+        // let date = new Date("2020/06/17")
+        // date.setHours(23)
+        // date.setMinutes(59)
+        // date.setSeconds(59)
+        // console.log("date", date)
 
-        let dateFromA = new Date("2020/06/16")
-        date.setHours(0)
-        date.setMinutes(0)
-        date.setSeconds(02)
-        console.log("dateFromA", dateFromA)
-        const dateFrom = new Date("2020-06-16").getTime()
-        console.log("filterReview -> dateFrom", dateFrom)
+        // let dateFromA = new Date("2020/06/16")
+        // date.setHours(0)
+        // date.setMinutes(0)
+        // date.setSeconds(02)
+        // console.log("dateFromA", dateFromA)
+        // const dateFrom = new Date("2020-06-16").getTime()
+        // console.log("filterReview -> dateFrom", dateFrom)
+
+
+        const now = new Date().toLocaleDateString()
+        console.log("🚀 ~ file: date_time.html ~ line 28 ~ now", now)
+        const expiry = new Date("6/29/2022, 1:57:38 PM").toLocaleDateString()
+        console.log("🚀 ~ file: date_time.html ~ line 30 ~ expiry", expiry)
+        console.log(222222, now === expiry);
     </script>
 </body>
 </html>

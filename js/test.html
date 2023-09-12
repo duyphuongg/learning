@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    "one hour" => 1 * 3600 = 3600 seconds "twenty minutes" => 20 * 60 = 1200
+    seconds. "two hours forty-six seconds" => 2 * 3600 + 46 = 7246 seconds.
+    "seven hours eighty-three minutes one second" => 7 * 3600 + 83 * 60 + 1 =
+    30181 seconds.
+    <script>
+      let UNIT = {
+        zero: 0,
+        one: 1,
+        two: 2,
+        three: 3,
+        four: 4,
+        five: 5,
+        six: 6,
+        seven: 7,
+        eight: 8,
+        nine: 9,
+        ten: 10,
+        eleven: 11,
+        twelve: 12,
+        thirteen: 13,
+        fourteen: 14,
+        fifteen: 15,
+        sixteen: 16,
+        seventeen: 17,
+        eighteen: 18,
+        nineteen: 19,
+        twenty: 20,
+        thirty: 30,
+        forty: 40,
+        fifty: 50,
+        sixty: 60,
+        seventy: 70,
+        eighty: 80,
+        ninety: 90,
+      };
+
+      function getNumberText(string) {
+        const match = string.match(
+          /(?<hours>.+) (hour|hours) (?<minutes>.+) (minute|minutes) (?<seconds>.+) (second|seconds)/
+        );
+        const hours = match.groups.hours;
+        const minutes = match.groups.minutes;
+        const seconds = match.groups.seconds;
+        return { hours, minutes, seconds };
+      }
+
+      function convertTextToNumber(text){
+        console.log(text);
+        if(!!text === false) return 0;
+        const textArr = text.split("-")
+        let num = 0
+        for(let i of textArr){
+          num = num + UNIT[i]
+        }
+        return num
+      }
+      function handleConvert(text){
+        const {hours, minutes, seconds} = getNumberText(text)
+        console.log(convertTextToNumber(hours), convertTextToNumber(minutes), convertTextToNumber(seconds));
+        return convertTextToNumber(hours) * 3600 + convertTextToNumber(minutes)*60 + convertTextToNumber(seconds)
+      }
+      console.log(handleConvert("seven hours eighty-three minutes one second"));
+
+
+      function convertEngWordsToNumber(wordString) {
+        console.log({ wordString });
+        if (!wordString) {
+          return -1;
+        }
+
+        const formattedWordString = wordString.replace(/-/g, " ");
+        const engWords = formattedWordString.split(" ");
+        console.log(
+          "🚀 ~ file: test.html:69 ~ convertEngWordsToNumber ~ engWords:",
+          engWords
+        );
+        let numPart = 0;
+        let decimalPart = 0;
+
+        engWords.forEach((w) => {
+          var x = UNIT[w];
+          if (x !== undefined) {
+            decimalPart = decimalPart + x;
+            console.log(
+              "🚀 ~ file: test.html:77 ~ engWords.forEach ~ decimalPart:",
+              decimalPart
+            );
+          } else if (w === "hundred") {
+            decimalPart = decimalPart * 100;
+            console.log(
+              "🚀 ~ file: test.html:80 ~ engWords.forEach ~ decimalPart:",
+              decimalPart
+            );
+          } else {
+            x = LARGE_UNIT[w];
+            console.log("🚀 ~ file: test.html:83 ~ engWords.forEach ~ x:", x);
+            if (x !== undefined) {
+              numPart = numPart + decimalPart * x;
+              decimalPart = 0;
+            }
+          }
+        });
+
+        return numPart + decimalPart;
+      }
+
+      function getTimerUnit({ pluralText, singularText }, compareText) {
+        if (compareText.includes(pluralText)) {
+          return pluralText;
+        }
+        return singularText;
+      }
+
+      function getValueFromArrayIndex(index, array) {
+        if (index === -1 || !array) {
+          return 0;
+        }
+        // console.log(array);
+        return convertEngWordsToNumber(array[index - 1]);
+      }
+
+      function convertTimerStringToSeconds(timerString) {
+        if (!timerString) {
+          return -1;
+        }
+
+        const match = timerString.match(
+          /(?<hours>.+) (hour|hours) (?<minutes>.+) (minute|minutes) (?<seconds>.+) (second|seconds)/
+        );
+        console.log(
+          "🚀 ~ file: test.html:115 ~ convertTimerStringToSeconds ~ match:",
+          match
+        );
+
+        const hours = convertEngWordsToNumber(match.groups.hours);
+        const minutes = convertEngWordsToNumber(match.groups.minutes);
+        const seconds = convertEngWordsToNumber(match.groups.seconds);
+
+        return hours * 3600 + minutes * 60 + seconds;
+      }
+      const string = "";
+      console.log(
+        222,
+        convertTimerStringToSeconds(
+          "two-hundred hours eighty-three minutes one second"
+        )
+      );
+    </script>
+  </body>
+</html>

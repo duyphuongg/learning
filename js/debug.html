@@ -19,28 +19,31 @@
     <button>Concat</button>
     <p></p>
     <script>
-      let country = [
-        { code: "AF", name: "Afghanistan" },
-        { code: "GBA", name: "Alderney" },
-        { code: "ASC", name: "Ascension Island " },
-        { code: "ALA", name: "\u00c5land Islands" },
-        { code: "AL", name: "Albania" },
-        { code: "DZ", name: "Algeria" },
-        { code: "AS", name: "American Samoa" },
-        { code: "AD", name: "Andorra" },
-        { code: "AO", name: "Angola" },
-      ];
-      let check = ["GBA", "DZ", "AF", "ASC"];
-      let belong = ["AF", "GBA"];
-      let filterCheck = check.filter((ele => !belong.includes(ele)))
-      console.log("🚀 ~ file: debug.html ~ line 36 ~ filterCheck", filterCheck)
-      let countryFiltrer = country.filter((ele, index) => {
-        console.log(2222222222, ele, index);
-        if (!filterCheck.includes(ele.code)) {
-          return ele;
-        }
-      });
-      console.log(countryFiltrer);
+      // let country = [
+      //   { code: "AF", name: "Afghanistan" },
+      //   { code: "GBA", name: "Alderney" },
+      //   { code: "ASC", name: "Ascension Island " },
+      //   { code: "ALA", name: "\u00c5land Islands" },
+      //   { code: "AL", name: "Albania" },
+      //   { code: "DZ", name: "Algeria" },
+      //   { code: "AS", name: "American Samoa" },
+      //   { code: "AD", name: "Andorra" },
+      //   { code: "AO", name: "Angola" },
+      // ];
+      // let check = ["GBA", "DZ", "AF", "ASC"];
+      // let belong = ["AF", "GBA"];
+      // let filterCheck = check.filter((ele => !belong.includes(ele)))
+      // console.log("🚀 ~ file: debug.html ~ line 36 ~ filterCheck", filterCheck)
+      // let countryFiltrer = country.filter((ele, index) => {
+      //   console.log(2222222222, ele, index);
+      //   if (!filterCheck.includes(ele.code)) {
+      //     return ele;
+      //   }
+      // });
+      // console.log(countryFiltrer);
+
+      let a = ''; 
+      console.log(!!a);
     </script>
   </body>
 </html>

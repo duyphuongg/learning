@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        height: 100vh;
+        margin-bottom: 50vh;
+        display: block;
+        text-align: center;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src=""
+      data-src="https://images.unsplash.com/photo-1504272017915-32d1bd315a59?fit=crop&w=600&q=80"
+    />
+    <img src="" data-src="https://wallpaperaccess.com/full/665336.jpg" />
+    <video
+      width="320"
+      height="240"
+      controls
+      id="video"
+      title="Advertisement"
+      webkit-playsinline="true"
+      playsinline="true"
+      autoplay=""
+      muted="muted"
+    >
+      <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+    </video>
+    <img
+      src=""
+      id="imgForTest"
+      data-src="https://wallpaperaccess.com/full/224878.jpg"
+    />
+    <img src="" data-src="https://wallpaperaccess.com/full/224784.jpg" />
+    <script>
+      //Detect When Users Switch Tabs using JavaScript
+      document.addEventListener("visibilitychange", () => {
+        document.title = document.visibilityState;
+      });
+
+      // window.addEventListener("blur", () => {
+      //   document.title = "blur";
+      // });
+
+      // window.addEventListener("focus", () => {
+      //   document.title = "focus";
+      // });
+      if (!!window.IntersectionObserver) {
+        let observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              // Kiểm tra ảnh của chúng ta có trong vùng nhìn thấy không
+              if (entry.isIntersecting) {
+                entry.target.src = entry.target.dataset.src;
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0 }
+        );
+        let listImages = document.querySelectorAll("img");
+        listImages.forEach((img) => {
+          observer.observe(img);
+        });
+
+        //check pause video
+        let video = document.querySelector("#video");
+        console.log(
+          "🚀 ~ file: intersection_observer.html ~ line 44 ~ video",
+          video
+        );
+        let isPaused = false;
+        let videoObserver = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.intersectionRatio != 1 && !video.paused) {
+                video.pause();
+                isPaused = true;
+                console.log(1111111111111111);
+              } else if (isPaused) {
+                video.play();
+                isPaused = false;
+                console.log(222222222222);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+        videoObserver.observe(video);
+      }
+    </script>
+  </body>
+</html>
